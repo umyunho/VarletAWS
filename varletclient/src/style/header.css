@@ -1,0 +1,123 @@
+/* 헤더 */
+.header {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+}
+
+/* 카테고리 메뉴 */
+.category_menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    z-index: 1000;
+    box-shadow:0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* 카테고리 div */
+.category_menu div{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15.5px;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+/* 로고 */
+.logo{
+    width: 350px;
+}
+
+/* 로그인/회원가입 */
+.login-buttons{
+    margin-left: 50px;
+    display: flex;
+    width: 140px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* 로고 이미지*/
+.logo img {
+    width: 350px;
+    height: 55px;
+    mix-blend-mode: normal;
+    cursor: pointer;
+    margin-right: 200px;
+    overflow: hidden;
+}
+
+/* 로그인 유저 정보 */
+.loginUserInfo {
+    display: flex;
+    width: 220px;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 180px;
+}
+
+/* 프로필 사진 */
+.profileimg img{
+    width: 68px;
+    height: 68px;
+    border: 2px solid black;
+    border-radius: 15%;
+}
+
+.myinfo{
+    width: 70px;
+    margin-right: 75px;
+}
+
+
+
+/* 모달 오버레이 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* 모달 콘텐츠 */
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 모달 헤더 */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 닫기 버튼 */
+.close-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* 모달 바디 */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

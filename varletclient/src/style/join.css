@@ -1,0 +1,204 @@
+/* 로그인 폼 전체 스타일 */
+.joinform {
+  position: relative; 
+  z-index: 1;
+  background: rgb(255, 255, 255, 0.7);
+  padding: 20px;
+  width: 1400px; 
+  height: 100%;
+  margin: 0 auto; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  text-align: center;
+  
+  }
+
+  
+  /* 로그인 제목 */
+  .joinlabel {
+    font-family: 'Mplus 1p Bold', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 46px;
+    line-height: 30px;
+    color: #000000;
+    text-align: center;
+    margin-top: -60px; /* 이 값을 조정하여 라벨을 위로 이동 */
+    margin-bottom: 100px; /* 하단 여백도 필요에 따라 조정 */
+  }
+  
+  /* 입력 필드 스타일 */
+.join_field {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+    margin-left: 550px;
+
+  }
+  
+  .join_field label {
+    display: flex;
+    font-family: 'Mplus 1p Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 5px;
+    text-align: center;
+    align-items: center;
+  }
+
+
+  .join_field input {
+    width: 200px;
+    /* height: 30px;
+    padding: 5px;
+    font-size: 15px;
+    margin-left: 5px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: white; */
+  }
+
+  .join_field input[type="text"]{
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    margin-left: 15px;
+    font-size: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .join_field input[type="password"]{
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    margin-left: 15px;
+    font-size: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* 버튼 그룹 스타일 */
+  .join_btn {
+    width: 450px;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+    margin-left: 500px;
+    justify-content: space-between;
+  }
+
+  .join_field button{
+    cursor: pointer;
+    width: 120px;
+    height: 25px;
+    font-family: 'Mplus 1p Bold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    border:1px solid black;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+
+
+
+  .join_btn button {
+    display: flex;
+    background: rgb(255, 255, 255, 0);
+    width: 200px;
+    height: 35px;
+    font-family: 'Mplus 1p Bold', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 22px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center; /* 텍스트 가운데 정렬 */
+  }
+  
+  
+  /* SNS 로그인 버튼 그룹 스타일 */
+  .snslogin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+  }
+  .chat img {
+    display: flex;
+    position: absolute;
+    width: 30px;
+    margin-top: 15px;
+    margin-left: -120px;
+  }
+
+  .naver img{
+      display: flex;
+      position: absolute;
+      width: 30px;
+      margin-top: 15px;
+      margin-left: -120px;
+  }
+
+
+
+  .snslogin button {
+    width: 350px;
+    height: 40px;
+    font-family: 'Mplus 1p Bold', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 22px;
+    color: hsl(0, 0%, 0%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 텍스트 가운데 정렬 */
+
+  }
+  
+  .snslogin button:nth-of-type(1) {
+    margin-left: 10px;
+    background-color: #FDF300; /* KAKAO 로그인 버튼 색상 */
+  }
+  
+  .snslogin button:nth-of-type(2) {
+    margin-left: 10px;
+    background-color: #5DFF43; /* NAVER 로그인 버튼 색상 */
+  }
+  
+  /* 배경 이미지 스타일 */
+  .background {
+    position: pixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -1; /* 로그인 폼 뒤에 배경 이미지 배치 */
+  }
+  
+  .background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지 비율 유지 및 컨테이너에 맞게 크기 조절 */
+  }
+  

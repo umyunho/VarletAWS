@@ -1,0 +1,69 @@
+.QnaPage{
+    width: 1000px;
+    align-items: center
+}
+.qnacenter{
+   font-size: 50px; 
+   font-weight: 900;
+}
+.qnatable{
+    width: 1000px;
+    border-bottom: 1px solid black;
+    align-items: center;
+    display:flex;
+    justify-content:space-between;
+    font-weight: 900;
+}
+.row1{
+    margin-left: 80px;
+
+}
+
+.row2{
+    padding: 10px 0 10px 0;
+    width: 1000px;
+    border-bottom: 1px solid rgb(196, 196, 196);
+    align-items: center;
+    display:flex;
+    justify-content:space-between;
+}
+.coll{
+    margin-left: 80px;
+}
+
+.button1{
+    background-color: #1E90FF; /* 바다색 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 30px;
+}
+
+
+
+.coll img{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.button1{
+    background-color: #1E90FF; /* 바다색 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 30px;
+}
+
+
+
+
+

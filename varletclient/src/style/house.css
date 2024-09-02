@@ -1,0 +1,28 @@
+.background {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -1; 
+  }
+  
+  .background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+
+  .houseTitle{
+    position: relative;
+    text-align: left;
+
+    font-family: 'Mplus 1p Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 20px;
+    font-size: 30px;
+
+  }
+  
