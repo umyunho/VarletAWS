@@ -25,14 +25,16 @@ function RcRecommend() {
         formData.append('berth', berth);
         formData.append('tour', tour);
     
-        // Append accommodation files
+        // Append accommodation files with image_type
         accommodationFiles.forEach((fileObj) => {
             formData.append('files', fileObj.file);
+            formData.append('image_type', '숙소'); // Add image_type for accommodation files
         });
     
-        // Append tourist spot files
+        // Append tourist spot files with image_type
         touristSpotFiles.forEach((fileObj) => {
             formData.append('files', fileObj.file);
+            formData.append('image_type', '관광지'); // Add image_type for tourist spot files
         });
     
         // Append removed files
@@ -40,9 +42,7 @@ function RcRecommend() {
             formData.append('removedimages', filename);
         });
     
-        jaxios.post(`/api/rcrecommend/writeRecommend/${rnum}`, formData, {
-            headers: { 'Content-Type': 'multipart/form-data' }
-        })
+        jaxios.postForm(`/api/rcrecommend/writeRecommend/${rnum}`, formData)
         .then(response => {
             alert("답글 작성에 성공했습니다.");
             setContent('');
