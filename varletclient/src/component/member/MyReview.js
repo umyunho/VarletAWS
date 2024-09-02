@@ -54,7 +54,7 @@ function MyReview() {
                                 style={{ cursor: 'pointer' }}
                             >
                                 <img
-                                    src={review.ipath === '' ? 'https://via.placeholder.com/300' : `http://localhost:8070${review.ipath}`}
+                                    src={review.ipath === '' ? 'https://via.placeholder.com/300' : `${review.ipath}`}
                                     className="w-[300px] h-[200px] object-cover"
                                     width="300"
                                     height="200"

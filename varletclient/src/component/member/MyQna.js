@@ -94,7 +94,7 @@ function MyQna() {
                     {qna.subject}
                     {
                       (qna.security === 'Y') ? (
-                        <img style={{ verticalAlign: "middle", marginLeft: "10px" }} src="http://localhost:8070/images/key.png" />
+                        <img style={{ verticalAlign: "middle", marginLeft: "10px" }} src="api/images/key.png" />
                       ) : (null)
                     }
                   </div>

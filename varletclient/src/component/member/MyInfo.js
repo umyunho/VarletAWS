@@ -180,7 +180,7 @@ function MyInfo() {
         formData.append('image', e.target.files[0]);
         try {
             const result = await jaxios.post('/api/member/fileupload', formData);
-            setProfileimg(`http://localhost:8070/uploads/${result.data.filename}`);
+            setProfileimg(`/api/uploads/${result.data.filename}`);
             setImgStyle({ display: "block", width: "200px" });
         } catch (err) {
             console.error(err);

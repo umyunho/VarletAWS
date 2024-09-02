@@ -36,7 +36,7 @@ function ContentsUpdate() {
         const formData = new FormData();
         formData.append('image', e.target.files[0]);
         const result = await jaxios.post('/api/member/fileupload', formData);
-        setContentsimg(`http://localhost:8070/uploads/${result.data.filename}`);
+        setContentsimg(`/api/uploads/${result.data.filename}`);
         console.log(result.data.filename);
 
 
