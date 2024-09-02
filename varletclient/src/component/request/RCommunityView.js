@@ -540,7 +540,7 @@ function RCommunityView() {
                                 key={image.id}
                                 src={`${image.filePath}`} // S3 URL 조합
                                 alt={image.imageName}
-                                style={{ width: '800px', height: '550px', objectFit: 'cover', marginRight: '10px' }}
+                                style={{ width: '400px', height: '450px', objectFit: 'cover', marginRight: '10px' }}
                               />
                             ))}
                           </div>
@@ -558,7 +558,7 @@ function RCommunityView() {
                                 key={image.id}
                                 src={`${image.filePath}`} // S3 URL 조합
                                 alt={image.imageName}
-                                style={{ width: '800px', height: '550px', objectFit: 'cover', marginRight: '10px' }}
+                                style={{ width: '400px', height: '450px', objectFit: 'cover', marginRight: '10px' }}
                               />
                             ))}
                           </div>
@@ -581,7 +581,7 @@ function RCommunityView() {
                                 key={image.id}
                                 src={`${image.filePath}`} // S3 URL 조합
                                 alt={image.imageName}
-                                style={{ width: '200px', height: '150px', objectFit: 'cover', marginRight: '10px', marginBottom: '10px' }}
+                                style={{ width: '400px', height: '450px', objectFit: 'cover', marginRight: '10px', marginBottom: '10px' }}
                               />
                             ))}
                           </div>

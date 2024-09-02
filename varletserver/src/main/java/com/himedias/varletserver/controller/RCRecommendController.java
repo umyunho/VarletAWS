@@ -33,11 +33,6 @@ public class RCRecommendController {
     @Autowired
     private RcrecommendRepository rcr;
 
-
-    @Autowired
-    private ServletContext servletContext;
-
-
     /**
      * 새로운 답글을 작성하는 엔드포인트입니다.
      * 게시글 ID와 사용자 ID, 내용을 받아 해당 게시글에 답글을 추가합니다.
