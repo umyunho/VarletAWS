@@ -8,7 +8,7 @@ import '../../style/header.css';
 
 function Heading() {
     const navigate = useNavigate();
-    const [profileImg, setProfileImg] = useState('http://localhost:8070/images/user.png');
+    const [profileImg, setProfileImg] = useState('http://3.34.111.185/images/user.png');
     const dispatch = useDispatch();
     const userCookie = getCookie('user');
 
@@ -51,7 +51,7 @@ function Heading() {
                 if (profileImgUrl) {
                     setProfileImg(profileImgUrl);
                 } else {
-                    setProfileImg('http://localhost:8070/images/user.png'); // 기본 이미지로 설정
+                    setProfileImg('/api/images/user.png'); // 기본 이미지로 설정
                 }
             })
             .catch((err) => {
@@ -76,7 +76,7 @@ function Heading() {
         <div className='header'>
             <div className='category_menu'>
                 <div className='logo'>
-                    <img src="http://localhost:8070/images/varlet.png" onClick={() => navigate('/')} alt="Logo" />
+                    <img src="/api/images/varlet.png" onClick={() => navigate('/')} alt="Logo" />
                 </div>
                 <div className='home' onClick={() => navigate('/')}>홈</div>
                 <div className='head_contents' onClick={() => navigate('/contentsList')}>컨텐츠</div>
