@@ -51,6 +51,7 @@ public class RCRecommendController {
             @RequestParam(value = "berth", required = false) String berth,
             @RequestParam(value = "tour", required = false) String tour,
             @RequestParam(value = "files", required = false) MultipartFile[] files,
+            @RequestParam(value = "image_type", required = false) String[] imageType,
             @RequestParam(value = "removedimages", required = false) String[] removedImages) {
 
         try {
@@ -67,7 +68,7 @@ public class RCRecommendController {
             rcrecommend.setTour(tour);
 
             // 답글을 저장하고 파일이 있을 경우 파일 경로도 함께 저장
-            Rcrecommend savedRcrecommend = rcs.saveRcrecommend(rcrecommend, files, new HashMap<>(), member);
+            Rcrecommend savedRcrecommend = rcs.saveRcrecommend(rcrecommend, files, imageType, member);
 
             // HashMap으로 응답 구성
             HashMap<String, Object> response = new HashMap<>();

@@ -45,20 +45,20 @@ public class ImageService {
     }
 
 
-    public void saveFiles(MultipartFile[] files, Member member, Rcrecommend rcrecommend, HashMap<String, String> allParams) throws IOException {
+    public void saveFiles(MultipartFile[] files, String[] imageType, Member member, Rcrecommend rcrecommend) throws IOException {
         for (int i = 0; i < files.length; i++) {
             MultipartFile file = files[i];
-            String imageTypeStr = allParams.get("image_type_" + i);
+            String imageTypeStr = imageType[i];
 
             // 이미지 타입 변환
-            Image.ImageType imageType;
+            Image.ImageType imageTypeEnum;
             try {
-                imageType = Image.ImageType.valueOf(imageTypeStr);
-            } catch (IllegalArgumentException e) {
-                imageType = Image.ImageType.기타; // 기본값 설정
+                imageTypeEnum = Image.ImageType.valueOf(imageTypeStr);
+            } catch (Exception e) {
+                imageTypeEnum = Image.ImageType.기타; // 기본값 설정
             }
 
-            uploadImage(member, rcrecommend, file, imageType);
+            uploadImage(member, rcrecommend, file, imageTypeEnum);
         }
     }
 
