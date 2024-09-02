@@ -216,7 +216,7 @@ function ReviewView() {
                                                 <div key={index}>
                                                     <img
                                                         className="contents-img"
-                                                        src={`http://localhost:8070${img.ipath}`}
+                                                        src={`${img.ipath}`}
                                                         alt={`Review ${index}`}
                                                     />
                                                 </div>

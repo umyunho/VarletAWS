@@ -34,7 +34,7 @@ function RcRecommend() {
         // Append tourist spot files with image_type
         touristSpotFiles.forEach((fileObj) => {
             formData.append('files', fileObj.file);
-            formData.append('image_type', '관광지'); // Add image_type for tourist spot files
+            formData.append('image_type', '여행지'); // Add image_type for tourist spot files
         });
     
         // Append removed files
