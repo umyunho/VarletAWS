@@ -30,7 +30,6 @@ function RCommunityView() {
   const [size, setSize] = useState(5);
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
-  const BACKEND_URL = 'http://localhost:8070'; // 백엔드 서버의 주소
   const [totalPages, setTotalPages] = useState(1);
   const [startPage, setStartPage] = useState(1);
   const [endPage, setEndPage] = useState(5);
@@ -221,7 +220,7 @@ function RCommunityView() {
   };
 
   const [showDates, setShowDates] = useState(false);
-  
+
   const toggleShowDates = () => {
     setShowDates(!showDates);
   };

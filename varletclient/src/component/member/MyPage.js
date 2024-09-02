@@ -10,7 +10,7 @@ function MyPage() {
     return (
         <>
         <Heading/>
-        <div className='background'><img src="http://localhost:8070/images/oceans.jpg" alt="background"/></div>
+        <div className='background'><img src="/api/images/oceans.jpg" alt="background"/></div>
         <div className='reviewList' style={{ flex: "4" }} >
             <div className='mypage'>
             <h1>My Page</h1>

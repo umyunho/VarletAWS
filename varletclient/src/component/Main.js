@@ -108,7 +108,7 @@ function Main() {
         if (reviewData && reviewData.length > 0) {
           const filteredImages = reviewData
             .filter(review => review.readcount >= 200 && review.reviewimg) // 조회수가 200 이상이고 이미지가 있는 리뷰만 필터링
-            .map(review => `http://localhost:8070/images/${review.reviewimg}`); // 이미지 URL 설정
+            .map(review => `/api/images/${review.reviewimg}`); // 이미지 URL 설정
 
           setImages(filteredImages);
 
@@ -171,7 +171,7 @@ function Main() {
       <Heading />
       <div className="flex min-h-[100dvh] flex-col w-full">
         <section className="w-full bg-gradient-to-r from-[white] to-[white] py-20 md:py-15" style={{
-          backgroundImage: 'url(http://localhost:8070/images/oceans.jpg)',
+          backgroundImage: 'url(/api/images/oceans.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           width: '100%',   // 원하는 너비 설정

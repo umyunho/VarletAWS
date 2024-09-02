@@ -79,7 +79,7 @@ function Join() {
         formData.append('image', e.target.files[0]);
         const result = await axios.post('/api/member/fileupload', formData);
         try {
-            setProfileimg(`http://localhost:8070/uploads/${result.data.filename}`);
+            setProfileimg(`/api/uploads/${result.data.filename}`);
             console.log(result.data.filename);
             setImgStyle({ display: "block", width: "200px" });
         } catch {

@@ -8,7 +8,7 @@ import '../../style/header.css';
 
 function Heading() {
     const navigate = useNavigate();
-    const [profileImg, setProfileImg] = useState('http://3.34.111.185/images/user.png');
+    const [profileImg, setProfileImg] = useState('/api/images/user.png');
     const dispatch = useDispatch();
     const userCookie = getCookie('user');
 

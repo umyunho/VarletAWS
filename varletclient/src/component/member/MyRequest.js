@@ -68,7 +68,7 @@ const MyRequest = () => {
         <>
             <Heading />
             <section className="w-full bg-gradient-to-r from-[#1e90ff] to-[#1e90ff] mt-28" style={{
-                backgroundImage: 'url(http://localhost:8070/images/oceans.jpg)',
+                backgroundImage: 'url(/api/images/oceans.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '100%',   // 원하는 너비 설정
