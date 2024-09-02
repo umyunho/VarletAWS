@@ -34,17 +34,6 @@ function RCommunityView() {
   const [totalPages, setTotalPages] = useState(1);
   const [startPage, setStartPage] = useState(1);
   const [endPage, setEndPage] = useState(5);
-  const S3_BUCKET_URL = 'https://varlet-file.s3.amazonaws.com';
-
-  // const [ref, inView] = useInView({
-  //   threshold: 50  
-  // });
-
-
-
-
-
-
 
 
   // 쿠키가 업데이트될 때마다 userCookie 상태를 갱신
@@ -81,7 +70,7 @@ function RCommunityView() {
             ...reply,
             images: reply.images.map(image => ({
                 ...image,
-                filePath: `${S3_BUCKET_URL}/${image.filePath}` // Construct absolute URL
+                filePath: `${image.filePath}` // Construct absolute URL
             }))
         }));
         const totalCount = response.data.paging.totalCount;
@@ -561,7 +550,7 @@ return (
                               {reply.images.filter(img => img.imageType === '숙소').map(image => (
                                   <img
                                       key={image.id}
-                                      src={`${S3_BUCKET_URL}/${image.filePath}`} // S3 URL 조합
+                                      src={`${image.filePath}`} // S3 URL 조합
                                       alt={image.imageName}
                                       style={{ width: '800px', height: '550px', objectFit: 'cover', marginRight: '10px' }}
                                   />
@@ -579,7 +568,7 @@ return (
                             {reply.images.filter(img => img.imageType === '여행지').map(image => (
                                 <img
                                     key={image.id}
-                                    src={`${S3_BUCKET_URL}/${image.filePath}`} // S3 URL 조합
+                                    src={`${image.filePath}`} // S3 URL 조합
                                     alt={image.imageName}
                                     style={{ width: '800px', height: '550px', objectFit: 'cover', marginRight: '10px' }}
                                 />
@@ -602,7 +591,7 @@ return (
                             {reply.images.filter(img => img.imageType === '기타').map(image => (
                                 <img
                                     key={image.id}
-                                    src={`${S3_BUCKET_URL}/${image.filePath}`} // S3 URL 조합
+                                    src={`${image.filePath}`} // S3 URL 조합
                                     alt={image.imageName}
                                     style={{ width: '200px', height: '150px', objectFit: 'cover', marginRight: '10px', marginBottom: '10px' }}
                                 />
