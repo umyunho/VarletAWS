@@ -105,8 +105,11 @@ function ReviewView() {
                         setEditForm({
                             title: result.data.review.title,
                             content: result.data.review.content,
+                            reviewimg: result.data.review.reviewimg
                         });
-
+                        if (result.data.review.reviewimg.length > 0) {
+                            setPreviewImage(`${result.data.review.reviewimg[0].ipath}`);
+                        }
 
                         // 댓글 데이터 다시 로드
                         jaxios.get(`/api/reply/getReplies/${rseq}`)
@@ -222,7 +225,7 @@ function ReviewView() {
                                     )}
                                 </div>
                                 <div>
-                                    <h1 className="text-3xl font-bold">
+                                    <h1 className="text-3xl font-bold h-28">
                                         {isEditing ? (
                                             <input
                                                 type="text"
@@ -249,13 +252,13 @@ function ReviewView() {
                                                     </tr>
                                                     <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
                                                         <td className="p-4 align-middle">내용</td>
-                                                        <td className="p-4 align-middle">
+                                                        <td className="p-4 align-middle h-36">
                                                             {isEditing ? (
                                                                 <textarea
                                                                     name="content"
                                                                     value={editForm.content}
                                                                     onChange={handleInputChange}
-                                                                    className="border p-2 w-full"
+                                                                    className="border p-2 w-full h-full"
                                                                 />
                                                             ) : (
                                                                 <pre>{review?.content}</pre>

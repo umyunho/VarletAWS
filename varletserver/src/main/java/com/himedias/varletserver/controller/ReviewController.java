@@ -112,16 +112,6 @@ public class ReviewController {
             review.setTitle(title);
             review.setContent(content);
 
-            // 기존 리뷰에 이미지가 있다면 S3에서 삭제합니다.
-            if (review.getReviewimg() != null && !review.getReviewimg().isEmpty()) {
-                for (Reviewimg img : review.getReviewimg()) {
-                    // S3에서 해당 파일을 삭제합니다.
-                    ris.deleteFile(img.getIname());
-                }
-                // 리뷰 객체에서 이미지 리스트를 비웁니다.
-                review.getReviewimg().clear();
-            }
-
             // 새로운 이미지 파일이 업로드된 경우 이를 처리합니다.
             if (reviewimgs != null && !reviewimgs.isEmpty()) {
                 List<String> filenames = new ArrayList<>();
