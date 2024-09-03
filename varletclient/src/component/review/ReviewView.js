@@ -105,11 +105,8 @@ function ReviewView() {
                         setEditForm({
                             title: result.data.review.title,
                             content: result.data.review.content,
-                            reviewimg: result.data.review.reviewimg
                         });
-                        if (result.data.review.reviewimg.length > 0) {
-                            setPreviewImage(`${result.data.review.reviewimg[0].ipath}`);
-                        }
+
 
                         // 댓글 데이터 다시 로드
                         jaxios.get(`/api/reply/getReplies/${rseq}`)
