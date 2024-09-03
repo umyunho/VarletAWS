@@ -83,7 +83,7 @@ function Login() {
                                     style={{ width: '30px' }}
                                     src="https://www.naver.com/favicon.ico"
                                     onClick={() => {
-                                        window.location.href = 'http://43.203.126.5//member/naverStart';
+                                        window.location.href = '/api/member/naverStart';
                                     }}
                                 />
                             </button>
