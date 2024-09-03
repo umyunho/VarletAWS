@@ -253,7 +253,6 @@ function RPostWritePost() {
     </div>
     </div>
     </div>
-</section>
 <Footer/>
 </>
   );
