@@ -75,7 +75,7 @@ public class MemberController {
         URL url = new URL(endpoint);
         String bodyData = "grant_type=authorization_code&";
         bodyData += "client_id=0d1c52079a64f14e109fa8b905caa368&";
-        bodyData += "redirect_uri=http://localhost:8070/member/kakaoLogin&";
+        bodyData += "redirect_uri=http://43.203.126.5/api/member/kakaoLogin&";
         bodyData += "code=" + code;
 
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -133,7 +133,7 @@ public class MemberController {
             ms.insertMember(member);
         }
         String username = URLEncoder.encode(ac.getEmail(), "UTF-8");
-        response.sendRedirect("http://localhost:3000/kakaosaveinfo/" + username);
+        response.sendRedirect("http://43.203.126.5/kakaosaveinfo/" + username);
     }
 
     // 네이버 로그인
@@ -239,7 +239,7 @@ public class MemberController {
             ms.insertMember(member);
         }
         String username = URLEncoder.encode(naverProfile.getResponse().getEmail(), "UTF-8");
-        response.sendRedirect("http://localhost:3000/naversaveinfo/" + username);
+        response.sendRedirect("http://43.203.126.5/naversaveinfo/" + username);
     }
 
 
