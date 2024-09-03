@@ -317,7 +317,7 @@ function ReviewView() {
                                                         </button>
                                                         <button onClick={() => setIsEditing(true)}
                                                             className="bg-black text-white px-4 py-2 rounded w-32">
-                                                            편집
+                                                            수정
                                                         </button>
                                                     </>
                                                 )}

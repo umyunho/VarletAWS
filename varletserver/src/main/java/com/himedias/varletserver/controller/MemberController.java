@@ -12,6 +12,7 @@ import com.himedias.varletserver.security.CustomSecurityConfig;
 import com.himedias.varletserver.security.util.CustomJWTException;
 import com.himedias.varletserver.security.util.JWTUtil;
 import com.himedias.varletserver.service.MemberService;
+import com.himedias.varletserver.service.S3UploadService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -293,22 +294,17 @@ public class MemberController {
 
 
     // 이미지 업로드
+    @Autowired
+    S3UploadService sus;
+
     @PostMapping("/fileupload")
-    public HashMap<String, Object> fileupload(@RequestParam("image") MultipartFile file) {
+    public HashMap<String, Object> fileup( @RequestParam("image") MultipartFile file){
 
         HashMap<String, Object> result = new HashMap<String, Object>();
-        String path = context.getRealPath("/uploads");
-
-        Calendar today = Calendar.getInstance();
-        long dt = today.getTimeInMillis();
-        String filename = file.getOriginalFilename();
-        String fn1 = filename.substring(0, filename.indexOf("."));
-        String fn2 = filename.substring(filename.indexOf("."));
-        String uploadPath = path + "/" + fn1 + dt + fn2;
-
         try {
-            file.transferTo(new File(uploadPath));
-            result.put("filename", fn1 + dt + fn2);
+            // 서비스단의 화일 업로드 메서드를 호출해서 파일을 저장
+            String uploadFilePathName = sus.saveFile( file );
+            result.put("filename", uploadFilePathName);
         } catch (IllegalStateException | IOException e) {
             e.printStackTrace();
         }
