@@ -67,14 +67,7 @@ const MyRequest = () => {
     return (
         <>
             <Heading />
-            <section className="w-full bg-gradient-to-r from-[#1e90ff] to-[#1e90ff] mt-28" style={{
-                backgroundImage: 'url(/api/images/oceans.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                width: '100%',   // 원하는 너비 설정
-                zIndex: 0,
-                marginTop: '100px'
-            }}></section>
+
             <div className='w-full max-w-[1500px] mx-auto px-1 '>
                 <div className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg h-200 min-h-full">
                     <div className='mt-14'>

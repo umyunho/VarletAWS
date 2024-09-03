@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Heading from './../headerfooter/Heading';
 import Footer from './../headerfooter/Footer';
-import '../../style/customer.css';
 import { getCookie } from "../../util/cookieUtil";
 
 function MyQna() {
@@ -27,9 +26,7 @@ function MyQna() {
   useEffect(() => {
     axios.get('/api/qna/qnaList/1')
       .then((result) => {
-        // 로그인한 사용자와 작성자가 동일한 게시글만 필터링
         const filteredQnaList = result.data.qnaList.filter(qna => qna.userid === currentUserid);
-        // 번호를 역순으로 정렬
         const sortedQnaList = filteredQnaList.sort((a, b) => a.qseq - b.qseq);
         setMyqnaList(sortedQnaList);
         setPaging(result.data.paging);
@@ -71,46 +68,47 @@ function MyQna() {
             <div >
             <div className='background'></div>
             </div>
-      <div className='QnaPage' style={{ paddingTop: '120px' }}>
-        <div className="qnalist" style={{ flex: "4" }}>
+      <div className='w-full max-w-[1500px] mx-auto px-1 mt-[80px]' >
+      <div className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg h-200 min-h-full">
+      
+        <div className='mt-14' >
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div className='qnacenter'>MY QNA</div>
             <button className='button1' onClick={() => { navigate('/writeQna') }}>1:1 문의 작성</button>
           </div>
-          <div className="qnatable">
-            <div className="row1">
+          <ul>
+            <li className='flex font-bold justify-center items-center text-black border-b border-gray-300 pb-2 mb-2'>
               <div className="col" style={{ flex: "2" }}>번호</div>
               <div className="col" style={{ flex: "4" }}>제목</div>
               <div className="col" style={{ flex: "2" }}>등록일</div>
               <div className="col" style={{ flex: "2" }}>답변여부</div>
-            </div>
-          </div>
+            </li>
           {
             myqnaList.length > 0 ? (
               myqnaList.map((qna, idx) => (
-                <div className="row2" key={qna.qseq}>
-                  <div className="coll" style={{ flex: "2" }}>{myqnaList.length - idx}</div> {/* 역순으로 번호 표시 */}
-                  <div className="coll" style={{ flex: "3.7" }} onClick={() => { onQnaView(qna.qseq) }}>
+                <li className="row2" key={qna.qseq}>
+                  <span className="coll" style={{ flex: "2" }}>{myqnaList.length - idx}</span> {/* 역순으로 번호 표시 */}
+                  <span className="coll" style={{ flex: "3.7" }} onClick={() => { onQnaView(qna.qseq) }}>
                     {qna.subject}
                     {
                       (qna.security === 'Y') ? (
                         <img style={{ verticalAlign: "middle", marginLeft: "10px" }} src="api/images/key.png" />
                       ) : (null)
                     }
-                  </div>
-                  <div className="coll" style={{ flex: "2" }}>{qna.indate.substring(0, 10)}</div>
-                  <div className="coll" style={{ flex: "2" }}>
+                  </span>
+                  <span className="coll" style={{ flex: "2" }}>{qna.indate.substring(0, 10)}</span>
+                  <span className="coll" style={{ flex: "2" }}>
                     {
                       (qna.reply) ? (<div>답변완료</div>) : (<div>질문 확인 중</div>)
                     }
-                  </div>
-                </div>
+                  </span>
+                </li>
               ))
             ) : (
-              <div>등록된 문의가 없습니다.</div>
+              <span>등록된 문의가 없습니다.</span>
             )
           }
-          <div id="paging" style={{ textAlign: "center", padding: "10px" }}>
+          <li id="paging" style={{ textAlign: "center", padding: "10px" }}>
             {
               paging.prev ? (
                 <span style={{ cursor: "pointer" }} onClick={() => { onPageMove(paging.beginPage - 1) }}>
@@ -141,11 +139,13 @@ function MyQna() {
                   ▶
                 </span>
               ) : (
-                <div></div>
+                <span></span>
               )
             }
-          </div>
-        </div>
+          </li>
+        </ul>
+      </div>
+      </div>
       </div>
       <Footer />
     </>
