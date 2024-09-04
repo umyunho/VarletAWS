@@ -139,7 +139,7 @@ function ContentsList() {
             </div> */}
 
       <div
-        className="mycourseContentsList"
+        className="mycourseContentsList flex-1"
         style={{ marginTop: "80px", bottom: "100px" }}
       >
         <div className="contents-container flex flex-wrap justify-between">

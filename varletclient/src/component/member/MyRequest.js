@@ -68,12 +68,15 @@ const MyRequest = () => {
     <>
       <Heading />
 
-      <div className="flex-1 w-full max-w-[1500px] mx-auto px-1 ">
-        <div className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg h-200 min-h-full">
-          <div className="mt-14">
-            <div className="flex justify-between items-baseline">
-              <h1 className="text-3xl font-semibold pb-5">MY REQUEST</h1>
-            </div>
+      <div className="w-full max-w-[1500px] mx-auto px-1 mt-[80px] flex-1">
+      <div className="bg-white bg-opacity-90 p-8  shadow-lg  h-[1100px] mt-100px">
+      <div className="mt-4 mb-5">
+      <div className="mt-4 mb-5">
+        <div className="flex justify-between items-baseline h-20">
+        <h1 className="text-3xl font-semibold pb-5">내 의뢰목록</h1>
+        </div>
+       <div className="w-full h-full">
+
             <ul>
               <li className="flex font-bold justify-center items-center text-black border-b border-gray-300 pb-2 mb-2">
                 <span className="w-1/12 text-center">번호</span>
@@ -164,9 +167,9 @@ const MyRequest = () => {
       </div>
 
       {/* 페이지 네비게이션 */}
-      <div className="flex justify-center mt-4">
-        <ul className="flex items-center space-x-1 text-base">
-          <li>
+      <div className="mt-4 flex justify-center">
+      <ul className="flex items-center space-x-1 h-20 text-base">
+      <li>
             <a
               href="#"
               onClick={(e) => {
@@ -301,6 +304,8 @@ const MyRequest = () => {
             </a>
           </li>
         </ul>
+      </div>
+      </div>
       </div>
       <Footer />
     </>

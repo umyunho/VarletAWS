@@ -132,7 +132,7 @@ function RPostWritePost() {
     <>
       <Heading />
 
-      <div className="w-full max-w-[1200px] mx-auto px-1 ">
+      <div className="w-full max-w-[1500px] mx-auto px-1 mt-[80px] flex-1">
         <div className="bg-white bg-opacity-90 p-8  shadow-lg  h-[1250px] mt-100px">
           <div className="flex justify-center">
             <div
@@ -252,7 +252,7 @@ function RPostWritePost() {
                       Content
                     </label>
                     <textarea
-                      className="flex w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 min-h-[300px] text-base"
+                      className="flex w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 min-h-[500px] text-base"
                       id="content"
                       value={content}
                       onChange={(e) => setContent(e.target.value)}

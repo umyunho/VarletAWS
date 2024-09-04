@@ -112,7 +112,7 @@ function WriteReview() {
   return (
     <>
       <Heading />
-      <div className="flex justify-center" style={{ marginTop: "80px" }}>
+      <div className="flex justify-center flex-1" style={{ marginTop: "80px" }}>
         <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-full max-w-4xl p-6">
           <h1 className="whitespace-nowrap font-semibold tracking-tight text-4xl mb-6">
             여행 후기 작성

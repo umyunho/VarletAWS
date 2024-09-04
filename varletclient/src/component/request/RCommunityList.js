@@ -113,7 +113,7 @@ function PostList() {
     <>
       <Heading />
 
-      <div className="w-full max-w-[1500px] mx-auto px-1 mt-[80px]">
+      <div className="w-full max-w-[1500px] mx-auto px-1 mt-[80px] flex-1">
         <div className="bg-white bg-opacity-90 p-8  shadow-lg  h-[1250px] mt-100px">
           <div className="mt-4 mb-5">
             <div className="flex justify-between items-baseline h-20">

@@ -109,36 +109,32 @@ function ReviewList() {
   return (
     <>
       <Heading />
-      <div className="reviewList" style={{ marginTop: "80px" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <h2 className="text-lg font-semibold">여행 후기</h2>
-          <button className="add-review-button" onClick={handleAddReview}>
+      <div className="reviewList flex-1 mt-20">
+        <div className="flex justify-between items-center">
+          <h2 className="text-2xl font-semibold text-blue-600">여행 후기</h2>
+          <button
+            className="bg-blue-500 text-white py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-blue-700"
+            onClick={handleAddReview}
+          >
             리뷰 작성
           </button>
         </div>
-
-        <div className="search-container" style={{ marginBottom: "20px" }}>
+  
+        <div className="search-container my-5 flex items-center">
           <input
             type="text"
             value={searchTerm}
             onChange={handleSearchChange}
             placeholder="제목 또는 작성자 아이디로 검색"
+            className="flex-1 p-3 border border-gray-300 rounded"
           />
           {searchTerm && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="icon icon-tabler icon-tabler-backspace cursor-pointer"
-              width="40"
-              height="40"
+              className="w-10 h-10 cursor-pointer ml-2"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
-              stroke="#000000"
+              stroke="currentColor"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -150,14 +146,14 @@ function ReviewList() {
             </svg>
           )}
         </div>
+  
         <div className="space-y-4">
           {Array.isArray(filteredReviews) && filteredReviews.length > 0 ? (
             filteredReviews.map((review) => (
               <div
                 key={review.id}
-                className="flex items-start space-x-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out rounded-lg p-4"
+                className="flex items-start space-x-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out rounded-lg p-4 cursor-pointer"
                 onClick={() => onReviewView(review.rseq)}
-                style={{ cursor: "pointer" }}
               >
                 <img
                   src={
@@ -165,17 +161,15 @@ function ReviewList() {
                       ? "https://via.placeholder.com/300"
                       : `${review.ipath}`
                   }
-                  className="w-[300px] h-[200px] object-cover"
-                  width="300"
-                  height="200"
-                  style={{ aspectRatio: "300 / 200", objectFit: "cover" }}
+                  className="w-[300px] h-[200px] object-cover rounded"
+                  alt="review"
                 />
                 <div>
-                  <h2 className="text-lg font-semibold">{review.title}</h2>
+                  <h2 className="text-xl font-semibold">{review.title}</h2>
                   <div className="flex items-center space-x-2 mt-2">
-                    <span className="relative flex h-50 w-10 shrink-0 overflow-hidden rounded-full">
+                    <span className="relative flex h-6 w-6 shrink-0 overflow-hidden rounded-full">
                       <svg
-                        className="w-6 h-6 stroke-current"
+                        className="w-6 h-6 text-gray-600"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -195,21 +189,19 @@ function ReviewList() {
                       </svg>
                     </span>
                     {review.userid && (
-                      <span className="text-xl text-muted-foreground">
+                      <span className="text-lg text-gray-600">
                         {review.userid}
                       </span>
                     )}
                   </div>
                   <div className="flex items-center space-x-2 mt-2">
-                    <span className="relative flex h-50 w-10 shrink-0 overflow-hidden rounded-full">
+                    <span className="relative flex h-6 w-6 shrink-0 overflow-hidden rounded-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="icon icon-tabler icon-tabler-eye"
-                        width="24"
-                        height="24"
+                        className="icon icon-tabler icon-tabler-eye w-6 h-6 text-gray-600"
                         viewBox="0 0 24 24"
                         strokeWidth="1.5"
-                        stroke="#000000"
+                        stroke="currentColor"
                         fill="none"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -220,21 +212,19 @@ function ReviewList() {
                       </svg>
                     </span>
                     {review.indate && (
-                      <span className="text-xl text-muted-foreground">
+                      <span className="text-lg text-gray-600">
                         {review.readcount}
                       </span>
                     )}
                   </div>
                   <div className="flex items-center space-x-2 mt-2">
-                    <span className="relative flex h-50 w-10 shrink-0 overflow-hidden rounded-full">
+                    <span className="relative flex h-6 w-6 shrink-0 overflow-hidden rounded-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="icon icon-tabler icon-tabler-calendar-month"
-                        width="24"
-                        height="24"
+                        className="w-6 h-6 text-gray-600"
                         viewBox="0 0 24 24"
                         strokeWidth="1.5"
-                        stroke="#000000"
+                        stroke="currentColor"
                         fill="none"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -254,7 +244,7 @@ function ReviewList() {
                       </svg>
                     </span>
                     {review.readcount && (
-                      <span className="text-xl text-muted-foreground">
+                      <span className="text-lg text-gray-600">
                         {review.indate.toString().substring(0, 10)}
                       </span>
                     )}
@@ -264,9 +254,7 @@ function ReviewList() {
             ))
           ) : (
             <div className="flex justify-center">
-              <h2 className="text-lg font-semibold">
-                해당하는 리뷰가 없습니다.
-              </h2>
+              <h2 className="text-xl font-semibold">해당하는 리뷰가 없습니다.</h2>
             </div>
           )}
         </div>
@@ -274,6 +262,8 @@ function ReviewList() {
       <Footer />
     </>
   );
+  
+  
 }
 
 export default ReviewList;
