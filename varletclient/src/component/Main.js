@@ -108,7 +108,7 @@ function Main() {
         if (reviewData && reviewData.length > 0) {
           const filteredImages = reviewData
             .filter(review => review.readcount >= 200 && review.reviewimg) // 조회수가 200 이상이고 이미지가 있는 리뷰만 필터링
-            .map(review => `/api/images/${review.reviewimg}`); // 이미지 URL 설정
+            .map(review => `http://localhost:8070/images/${review.reviewimg}`); // 이미지 URL 설정
 
           setImages(filteredImages);
 
@@ -171,7 +171,7 @@ function Main() {
       <Heading />
       <div className="flex min-h-[100dvh] flex-col w-full">
         <section className="w-full bg-gradient-to-r from-[white] to-[white] py-20 md:py-15" style={{
-          backgroundImage: 'url(/api/images/oceans.jpg)',
+          backgroundImage: 'url(http://localhost:8070/images/oceans.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           width: '100%',   // 원하는 너비 설정
@@ -241,7 +241,7 @@ function Main() {
           <div className="grid grid-cols-3 gap-4">
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105" data-v0-t="card">
               <img
-                src="/api/images/ulleungdo.jpg"
+                src="http://localhost:8070/images/ulleungdo.jpg"
                 alt="Forest"
                 className="w-full h-[200px] object-cover rounded-t-md"
                 width="300"
@@ -256,7 +256,7 @@ function Main() {
             </div>
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105" data-v0-t="card">
               <img
-                src="/api/images/jeju2.jpg"
+                src="http://localhost:8070/images/jeju2.jpg"
                 alt="Beach"
                 className="w-full h-[200px] object-cover rounded-t-md"
                 width="300"
@@ -271,7 +271,7 @@ function Main() {
             </div>
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105" data-v0-t="card">
               <img
-                src="/api/images/gujedo.jpg"
+                src="http://localhost:8070/images/gujedo.jpg"
                 alt="Field"
                 className="w-full h-[200px] object-cover rounded-t-md"
                 width="300"
@@ -286,7 +286,7 @@ function Main() {
             </div>
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105" data-v0-t="card">
               <img
-                src="/api/images/gujedo.jpg"
+                src="http://localhost:8070/images/gujedo.jpg"
                 alt="Field"
                 className="w-full h-[200px] object-cover rounded-t-md"
                 width="300"
@@ -301,7 +301,7 @@ function Main() {
             </div>
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105" data-v0-t="card">
               <img
-                src="/api/images/gujedo.jpg"
+                src="http://localhost:8070/images/gujedo.jpg"
                 alt="Field"
                 className="w-full h-[200px] object-cover rounded-t-md"
                 width="300"
@@ -316,7 +316,7 @@ function Main() {
             </div>
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105" data-v0-t="card">
               <img
-                src="/api/images/gujedo.jpg"
+                src="http://localhost:8070/images/gujedo.jpg"
                 alt="Field"
                 className="w-full h-[200px] object-cover rounded-t-md"
                 width="300"
@@ -371,7 +371,7 @@ function Main() {
         <div className="grid grid-cols-3 gap-4">
           <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105" data-v0-t="card">
             <img
-              src="/api/images/ulleungdo.jpg"
+              src="http://localhost:8070/images/ulleungdo.jpg"
               alt="Forest"
               className="w-full h-[200px] object-cover rounded-t-md"
               width="300"
@@ -386,7 +386,7 @@ function Main() {
           </div>
           <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105" data-v0-t="card">
             <img
-              src="/api/images/jeju2.jpg"
+              src="http://localhost:8070/images/jeju2.jpg"
               alt="Beach"
               className="w-full h-[200px] object-cover rounded-t-md"
               width="300"
@@ -401,7 +401,7 @@ function Main() {
           </div>
           <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105" data-v0-t="card">
             <img
-              src="/api/images/gujedo.jpg"
+              src="http://localhost:8070/images/gujedo.jpg"
               alt="Field"
               className="w-full h-[200px] object-cover rounded-t-md"
               width="300"

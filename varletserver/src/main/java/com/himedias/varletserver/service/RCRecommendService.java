@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -67,18 +66,18 @@ public class RCRecommendService {
      */
 // 답글과 관련된 파일을 저장하는 서비스 메소드
     @Transactional
-    public Rcrecommend saveRcrecommend(Rcrecommend rcrecommend, MultipartFile[] files, String[] imageType, Member member) throws IOException {
+    public Rcrecommend saveRcrecommend(Rcrecommend rcrecommend, MultipartFile[] files, HashMap<String, String> allParams, Member member) {
         // 답글을 데이터베이스에 저장
         Rcrecommend savedRcrecommend = rcr.save(rcrecommend);
 
         // 파일이 있을 경우 파일 저장 및 이미지 정보 저장
         if (files != null && files.length > 0) {
-            // allParams는 빈 HashMap으로 전달되지만 실제로는 필요하지 않을 수 있습니다.
-            is.saveFiles(files, imageType, member, rcrecommend);
+            is.saveFiles(files, member, rcrecommend, allParams); // 모든 매개변수 전달
         }
 
         return savedRcrecommend;
     }
+
 
     /**
      * 주어진 게시글 ID로 답글 목록을 조회합니다.

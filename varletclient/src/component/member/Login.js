@@ -35,7 +35,40 @@ function Login() {
     return (
         <>
             <Heading />
-
+            {/* <div style={{ paddingTop: '100px' }}>
+            <div className='background'><img src="http://localhost:8070/images/oceans.jpg"/></div>
+        </div> */}
+            {/* 
+        <div className='loginlabel'>로그인</div>
+                <div className='login_field'>
+                    <label>아이디</label>
+                    <input type="text" className='text' value={userid} onChange={(e) => { setUserid(e.currentTarget.value) }} />
+                </div>
+                <div className='login_field'>
+                    <label>비밀번호</label>
+                    <input type="password" value={pwd} onChange={(e) => { setPwd(e.currentTarget.value) }} />
+                </div>
+                <div className='btns'>
+                    <button onClick={() => { onLoginLocal() }}>로그인</button>
+                    <button onClick={() => { navigate('/join') }}>회원가입</button>
+                </div>
+                <div className='findbtn'>
+                    <button onClick={() => { navigate('/findId') }}>아이디 찾기</button>
+                    <button onClick={() => { navigate('/findPwd') }}>비밀번호 찾기</button>
+                </div>
+                <div className='snslogin'>
+                    <div className='chat'><img src="http://localhost:8070/images/chat.png" /></div>
+                    <button onClick={() => {
+                        window.location.href = 'http://localhost:8070/member/kakaoStart';
+                    }}>KAKAO 로그인</button>
+                    <div className='naver'><img src="http://localhost:8070/images/naver.png" /></div>
+                    <button onClick={() => {
+                        window.location.href = 'http://localhost:8070/member/naverStart';
+                    }}>NAVER 로그인</button>
+                    <img style={{width:'40px'}} src='https://www.naver.com/favicon.ico'/>
+                    <img style={{width:'40px'}} src='https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/kakaoService/cc08d9e2018e00001.png'/>
+                </div>
+        */}
             <div className="loginform" style={{ marginTop: '80px' }}>
                 <div className="flex items-center justify-center">
                     <div
@@ -50,7 +83,7 @@ function Login() {
                                     style={{ width: '30px' }}
                                     src="https://www.naver.com/favicon.ico"
                                     onClick={() => {
-                                        window.location.href = '/api/member/naverStart';
+                                        window.location.href = 'http://localhost:8070/member/naverStart';
                                     }}
                                 />
                             </button>
@@ -59,7 +92,7 @@ function Login() {
                                     style={{ width: '30px' }}
                                     src="https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/kakaoService/cc08d9e2018e00001.png"
                                     onClick={() => {
-                                        window.location.href = '/api/member/kakaoStart';
+                                        window.location.href = 'http://localhost:8070/member/kakaoStart';
                                     }}
                                 />
                             </button>

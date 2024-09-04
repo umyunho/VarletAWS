@@ -12,7 +12,6 @@ import com.himedias.varletserver.security.CustomSecurityConfig;
 import com.himedias.varletserver.security.util.CustomJWTException;
 import com.himedias.varletserver.security.util.JWTUtil;
 import com.himedias.varletserver.service.MemberService;
-import com.himedias.varletserver.service.S3UploadService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -75,7 +74,7 @@ public class MemberController {
         URL url = new URL(endpoint);
         String bodyData = "grant_type=authorization_code&";
         bodyData += "client_id=0d1c52079a64f14e109fa8b905caa368&";
-        bodyData += "redirect_uri=http://43.203.126.5/api/member/kakaoLogin&";
+        bodyData += "redirect_uri=http://localhost:8070/member/kakaoLogin&";
         bodyData += "code=" + code;
 
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -133,7 +132,7 @@ public class MemberController {
             ms.insertMember(member);
         }
         String username = URLEncoder.encode(ac.getEmail(), "UTF-8");
-        response.sendRedirect("http://43.203.126.5/kakaosaveinfo/" + username);
+        response.sendRedirect("http://localhost:3000/kakaosaveinfo/" + username);
     }
 
     // 네이버 로그인
@@ -239,7 +238,7 @@ public class MemberController {
             ms.insertMember(member);
         }
         String username = URLEncoder.encode(naverProfile.getResponse().getEmail(), "UTF-8");
-        response.sendRedirect("http://43.203.126.5/naversaveinfo/" + username);
+        response.sendRedirect("http://localhost:3000/naversaveinfo/" + username);
     }
 
 
@@ -294,17 +293,22 @@ public class MemberController {
 
 
     // 이미지 업로드
-    @Autowired
-    S3UploadService sus;
-
     @PostMapping("/fileupload")
-    public HashMap<String, Object> fileup( @RequestParam("image") MultipartFile file){
+    public HashMap<String, Object> fileupload(@RequestParam("image") MultipartFile file) {
 
         HashMap<String, Object> result = new HashMap<String, Object>();
+        String path = context.getRealPath("/uploads");
+
+        Calendar today = Calendar.getInstance();
+        long dt = today.getTimeInMillis();
+        String filename = file.getOriginalFilename();
+        String fn1 = filename.substring(0, filename.indexOf("."));
+        String fn2 = filename.substring(filename.indexOf("."));
+        String uploadPath = path + "/" + fn1 + dt + fn2;
+
         try {
-            // 서비스단의 화일 업로드 메서드를 호출해서 파일을 저장
-            String uploadFilePathName = sus.saveFile( file );
-            result.put("filename", uploadFilePathName);
+            file.transferTo(new File(uploadPath));
+            result.put("filename", fn1 + dt + fn2);
         } catch (IllegalStateException | IOException e) {
             e.printStackTrace();
         }
@@ -407,9 +411,10 @@ public class MemberController {
     @GetMapping("/verifyCodeAndFindPwd/{email}/{code}")
     public HashMap<String, Object> verifyCodeAndFindPwd(@PathVariable("email") String email,@PathVariable("code") String code) {
         HashMap<String, Object> result = new HashMap<>();
-        String ok = ms.verifyCodeAndFindPwd(email, code);
+        String userid = ms.verifyCodeAndFindPwd(email, code);
 
-        if (ok != null) {
+        if (userid != null) {
+            result.put("userid",userid);
             result.put("msg", "yes");
         } else {
             result.put("msg", "no");

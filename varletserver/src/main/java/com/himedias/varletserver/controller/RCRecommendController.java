@@ -33,21 +33,25 @@ public class RCRecommendController {
     @Autowired
     private RcrecommendRepository rcr;
 
+
+    @Autowired
+    private ServletContext servletContext;
+
+
     /**
      * 새로운 답글을 작성하는 엔드포인트입니다.
      * 게시글 ID와 사용자 ID, 내용을 받아 해당 게시글에 답글을 추가합니다.
      * 선택적으로 이미지 파일 경로도 받을 수 있습니다.
      */
     @PostMapping("/writeRecommend/{rnum}")
-    public ResponseEntity<HashMap<String, Object>> writeRecommend(
+    public HashMap<String, Object> writeRecommend(
             @PathVariable("rnum") int rnum,
             @RequestParam("userid") String userid,
             @RequestParam("content") String content,
             @RequestParam(value = "berth", required = false) String berth,
             @RequestParam(value = "tour", required = false) String tour,
             @RequestParam(value = "files", required = false) MultipartFile[] files,
-            @RequestParam(value = "image_type", required = false) String[] imageType,
-            @RequestParam(value = "removedimages", required = false) String[] removedImages) {
+            @RequestParam Map<String, String> allParams) {
 
         try {
             // 게시글 및 사용자 정보를 조회
@@ -63,19 +67,18 @@ public class RCRecommendController {
             rcrecommend.setTour(tour);
 
             // 답글을 저장하고 파일이 있을 경우 파일 경로도 함께 저장
-            Rcrecommend savedRcrecommend = rcs.saveRcrecommend(rcrecommend, files, imageType, member);
+            Rcrecommend savedRcrecommend = rcs.saveRcrecommend(rcrecommend, files, (HashMap<String, String>) allParams, member);
 
             // HashMap으로 응답 구성
             HashMap<String, Object> response = new HashMap<>();
             response.put("rcnum", savedRcrecommend.getRcnum());
-            return ResponseEntity.status(HttpStatus.CREATED).body(response);
+            return response;
 
         } catch (Exception e) {
-            e.printStackTrace();  // Exception 출력
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+            e.printStackTrace();
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Server Error", e);
         }
     }
-
 
 
 
@@ -99,6 +102,7 @@ public class RCRecommendController {
         paging.setTotalCount((int) recommendList.getTotalElements());
         paging.calPaging();
 
+        // 절대 경로 변환 제거
         result.put("recommend", recommendList.getContent());
         result.put("paging", paging);
         return result;
