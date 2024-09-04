@@ -145,7 +145,7 @@ function Qna() {
                 );
               })
             : null}
-          <div className="text-center py-2 flex-1">
+          <div className="text-center py-2 flex">
             {paging.prev ? (
               <span
                 className="cursor-pointer"
