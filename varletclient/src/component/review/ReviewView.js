@@ -27,7 +27,7 @@ function ReviewView() {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: replies?.reviewimg?.length > 1, // 이미지 개수가 2개가 넘을때만 무한 모드 활성화
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
