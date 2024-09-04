@@ -101,29 +101,28 @@ function MyQna() {
             </div>
             <ul>
               <li className="flex font-bold justify-center items-center text-black border-b border-gray-300 pb-2 mb-2">
-                <div className="col" style={{ flex: "2" }}>
+                <div className="coll" style={{ flex: "2" }}>
                   번호
                 </div>
-                <div className="col" style={{ flex: "4" }}>
+                <div className="coll" style={{ flex: "4" }}>
                   제목
                 </div>
-                <div className="col" style={{ flex: "2" }}>
+                <div className="coll" style={{ flex: "2" }}>
                   등록일
                 </div>
-                <div className="col" style={{ flex: "2" }}>
+                <div className="coll" style={{ flex: "2" }}>
                   답변여부
                 </div>
               </li>
               {myqnaList.length > 0 ? (
                 myqnaList.map((qna, idx) => (
-                  <li className="row2" key={qna.qseq}>
+                  <li className="flex justify-center items-center text-black border-b border-gray-300 pb-2 mb-2" key={qna.qseq}>
                     <span className="coll" style={{ flex: "2" }}>
                       {myqnaList.length - idx}
-                    </span>{" "}
-                    {/* 역순으로 번호 표시 */}
+                    </span>
                     <span
                       className="coll"
-                      style={{ flex: "3.7" }}
+                      style={{ flex: "4" }}
                       onClick={() => {
                         onQnaView(qna.qseq);
                       }}
