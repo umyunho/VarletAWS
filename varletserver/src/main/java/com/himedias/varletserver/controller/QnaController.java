@@ -5,10 +5,13 @@ import com.himedias.varletserver.entity.Qna;
 import com.himedias.varletserver.service.QnaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/qna")
@@ -16,6 +19,41 @@ public class QnaController {
 
     @Autowired
     QnaService qs;
+
+    @GetMapping("")
+    public Map<String, Object> qnalist(
+            @PageableDefault(sort = "indate", direction = Sort.Direction.DESC)
+            Pageable pageable,
+
+            @RequestParam(value = "userid", required = false)
+            String userid
+    ) {
+        // 인자(RequestParam) = 프론트에서 넘겨주는 값
+
+        // QnA 페이지 객체를 담을 변수를 선언
+        Page<Qna> qnaPage;
+        if (userid != null && !userid.isEmpty()) {
+            // userid가 null이 아니고, 비어있지 않으면 userid를 통해서 qna 목록을 가져옴
+            qnaPage = qs.getQnaList(pageable, userid);
+        } else {
+            // 아니면 모든 qna 목록을 가져옴
+            qnaPage = qs.getQnaList(pageable);
+        }
+
+        // Paging 객체로 변환
+        Paging paging = new Paging();
+        paging.setPage(qnaPage.getNumber() + 1);
+        paging.setDisplayRow(20);
+        paging.setTotalCount((int) qnaPage.getTotalElements());
+        paging.calPaging();
+
+        // Prepare response
+        Map<String, Object> result = new HashMap<>();
+        result.put("qnaList", qnaPage.getContent());
+        result.put("paging", paging);
+
+        return result;
+    }
 
     @GetMapping("/qnaList/{page}")
     public HashMap<String, Object> qnalist(@PathVariable("page") int page) {

@@ -7,6 +7,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,20 @@ public class QnaService {
 
     @Autowired
     QnaRepository qr;
+
+    /**
+     * 전체 QnA 목록 조회
+     */
+    public Page<Qna> getQnaList(Pageable pageable) {
+        return qr.findAll(pageable);
+    }
+
+    /**
+     * 유저 id 로 QnA 목록 조회
+     */
+    public Page<Qna> getQnaList(Pageable pageable, String userid) {
+        return qr.findAllByUserid(pageable, userid);
+    }
 
     public Page<Qna> getQnaList(Paging paging) {
         int pageNumber = paging.getPage() - 1; // PageRequest uses 0-based index

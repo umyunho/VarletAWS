@@ -165,7 +165,7 @@ public class JWTCheckFilter extends OncePerRequestFilter {
 
 
         // 고객센터
-        if (path.startsWith("/qna/qna"))
+        if (path.startsWith("/qna"))
             return true;
         if (path.startsWith("/qna/writeQna"))
             return true;
