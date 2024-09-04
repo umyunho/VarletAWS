@@ -22,35 +22,11 @@ function MyQna() {
   // 로그인 사용자 ID 결정 (쿠키에서 가져오거나 Redux에서 가져오거나)
   const currentUserid = userid || reduxUserid;
 
-  useEffect(() => {
+  function fetchQna(page) {
     axios
-      .get("/api/qna/qnaList/1")
-      .then((result) => {
-        const filteredQnaList = result.data.qnaList.filter(
-          (qna) => qna.userid === currentUserid,
-        );
-        const sortedQnaList = filteredQnaList.sort((a, b) => a.qseq - b.qseq);
-        setMyqnaList(sortedQnaList);
-        setPaging(result.data.paging);
-
-        const pageArr = [];
-        for (
-          let i = result.data.paging.beginPage;
-          i <= result.data.paging.endPage;
-          i++
-        ) {
-          pageArr.push(i);
-        }
-        setBeginend(pageArr);
+      .get("/api/qna", {
+        params: { page: page - 1, size: 20, userid: currentUserid },
       })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, [currentUserid]);
-
-  function onPageMove(page) {
-    axios
-      .get(`/api/qna/qnaList/${page}`)
       .then((result) => {
         const filteredQnaList = result.data.qnaList.filter(
           (qna) => qna.userid === currentUserid,
@@ -59,12 +35,9 @@ function MyQna() {
         setMyqnaList(sortedQnaList);
         setPaging(result.data.paging);
 
+        const { beginPage, endPage } = result.data.paging;
         const pageArr = [];
-        for (
-          let i = result.data.paging.beginPage;
-          i <= result.data.paging.endPage;
-          i++
-        ) {
+        for (let i = beginPage; i <= endPage; i++) {
           pageArr.push(i);
         }
         setBeginend(pageArr);
@@ -73,6 +46,12 @@ function MyQna() {
         console.error(err);
       });
   }
+
+  // 두번째 인자인 의존성 배열에 들어있는 값이 기존과 다르면, 첫번째 인자의 함수를 실행
+  // 처음에 아무 값도 없을 때 새로운 값으로 들어온 것으로 인식해서 최초 1회는 항상 실행
+  useEffect(() => {
+    fetchQna(1);
+  }, [currentUserid]);
 
   // 비밀번호 확인 절차 없이 바로 QnA 상세보기로 이동
   async function onQnaView(qseq) {
@@ -158,7 +137,7 @@ function MyQna() {
                   <span
                     style={{ cursor: "pointer" }}
                     onClick={() => {
-                      onPageMove(paging.beginPage - 1);
+                      fetchQna(paging.beginPage - 1);
                     }}
                   >
                     ◀
@@ -172,7 +151,7 @@ function MyQna() {
                       style={{ cursor: "pointer", margin: "0 5px" }}
                       key={idx}
                       onClick={() => {
-                        onPageMove(page);
+                        fetchQna(page);
                       }}
                     >
                       {page}
@@ -185,7 +164,7 @@ function MyQna() {
                   <span
                     style={{ cursor: "pointer" }}
                     onClick={() => {
-                      onPageMove(paging.endPage + 1);
+                      fetchQna(paging.endPage + 1);
                     }}
                   >
                     ▶
