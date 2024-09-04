@@ -44,7 +44,7 @@ function ReviewView() {
                         reviewimg: reviewData.reviewimg
                     });
                     if (reviewData.reviewimg.length > 0) {
-                        setPreviewImage(`${reviewData.reviewimg[0].ipath}`);
+                        setPreviewImage(`http://localhost:8070${reviewData.reviewimg[0].ipath}`);
                     }
                 } else {
                     console.error('Review data is not available.');
@@ -108,7 +108,7 @@ function ReviewView() {
                             reviewimg: result.data.review.reviewimg
                         });
                         if (result.data.review.reviewimg.length > 0) {
-                            setPreviewImage(`${result.data.review.reviewimg[0].ipath}`);
+                            setPreviewImage(`http://localhost:8070${result.data.review.reviewimg[0].ipath}`);
                         }
 
                         // 댓글 데이터 다시 로드
@@ -216,7 +216,7 @@ function ReviewView() {
                                                 <div key={index}>
                                                     <img
                                                         className="contents-img"
-                                                        src={`${img.ipath}`}
+                                                        src={`http://localhost:8070${img.ipath}`}
                                                         alt={`Review ${index}`}
                                                     />
                                                 </div>
@@ -225,7 +225,7 @@ function ReviewView() {
                                     )}
                                 </div>
                                 <div>
-                                    <h1 className="text-3xl font-bold h-28">
+                                    <h1 className="text-3xl font-bold">
                                         {isEditing ? (
                                             <input
                                                 type="text"
@@ -252,13 +252,13 @@ function ReviewView() {
                                                     </tr>
                                                     <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
                                                         <td className="p-4 align-middle">내용</td>
-                                                        <td className="p-4 align-middle h-36">
+                                                        <td className="p-4 align-middle">
                                                             {isEditing ? (
                                                                 <textarea
                                                                     name="content"
                                                                     value={editForm.content}
                                                                     onChange={handleInputChange}
-                                                                    className="border p-2 w-full h-full"
+                                                                    className="border p-2 w-full"
                                                                 />
                                                             ) : (
                                                                 <pre>{review?.content}</pre>
@@ -317,7 +317,7 @@ function ReviewView() {
                                                         </button>
                                                         <button onClick={() => setIsEditing(true)}
                                                             className="bg-black text-white px-4 py-2 rounded w-32">
-                                                            수정
+                                                            편집
                                                         </button>
                                                     </>
                                                 )}
