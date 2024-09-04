@@ -61,11 +61,8 @@ function MyQna() {
   return (
     <>
       <Heading />
-      <div>
-        <div className="background"></div>
-      </div>
-      <div className="flex-1 w-full max-w-[1500px] mx-auto px-1 mt-[80px]">
-        <div className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg h-200 min-h-full">
+
+      <div className="relative z-10 bg-white bg-opacity-70 p-5 rounded-lg w-[1100px] mx-auto shadow-lg text-center pt-[100px] mt-[80px] flex-1">
           <div className="mt-14">
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div className="qnacenter">MY QNA</div>
@@ -176,7 +173,6 @@ function MyQna() {
             </ul>
           </div>
         </div>
-      </div>
       <Footer />
     </>
   );
