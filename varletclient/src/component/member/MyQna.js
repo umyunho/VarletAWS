@@ -118,7 +118,7 @@ function MyQna() {
                 myqnaList.map((qna, idx) => (
                   <li className="flex justify-center items-center text-black border-b border-gray-300 pb-2 mb-2" key={qna.qseq}>
                     <span className="coll" style={{ flex: "2" }}>
-                      {myqnaList.length - idx}
+                      {qna.qseq}
                     </span>
                     <span
                       className="coll"
