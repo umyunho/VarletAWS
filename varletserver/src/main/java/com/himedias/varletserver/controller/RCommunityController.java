@@ -5,8 +5,6 @@ import com.himedias.varletserver.dto.Rcommunity.RCommunityInfo;
 import com.himedias.varletserver.dto.Rcommunity.RCommunityMyList;
 import com.himedias.varletserver.dto.Rcommunity.RCommunitySummary;
 import com.himedias.varletserver.dto.Rcommunity.RCommunityWrite;
-import com.himedias.varletserver.entity.Member;
-import com.himedias.varletserver.entity.RCommunity;
 import com.himedias.varletserver.service.RCommunityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,13 +13,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/rcommunity")
@@ -32,10 +27,11 @@ public class RCommunityController {
 
     /**
      * 게시물 목록을 조회합니다. 위치에 따라 필터링할 수 있으며, 페이징과 정렬이 가능합니다.
-     * @param location 위치 (선택적 파라미터)
+     *
+     * @param location  위치 (선택적 파라미터)
      * @param location2 세부 위치 (선택적 파라미터)
-     * @param page 페이지 번호 (기본값: 1)
-     * @param size 페이지당 게시물 수 (기본값: 10)
+     * @param page      페이지 번호 (기본값: 1)
+     * @param size      페이지당 게시물 수 (기본값: 10)
      * @return 게시물 목록과 페이징 정보가 포함된 맵
      */
 // REST 컨트롤러에서 "/getPostList"로 매핑된 GET 요청을 처리하는 메소드
@@ -75,6 +71,7 @@ public class RCommunityController {
 
     /**
      * 사용자의 게시물 목록을 조회합니다.
+     *
      * @param userid 사용자 ID
      * @return 사용자의 게시물 목록이 포함된 맵
      */
@@ -107,10 +104,9 @@ public class RCommunityController {
     }
 
 
-
-
     /**
      * 새 게시물을 작성합니다.
+     *
      * @param rCommunityWrite 게시물 작성에 필요한 데이터
      * @return 작성된 게시물의 결과를 포함하는 응답
      */
@@ -132,6 +128,7 @@ public class RCommunityController {
 
     /**
      * 특정 게시물의 상세 정보를 조회합니다.
+     *
      * @param rnum 게시물 ID
      * @return 게시물 상세 정보가 포함된 맵
      */
@@ -153,7 +150,8 @@ public class RCommunityController {
 
     /**
      * 게시물을 업데이트합니다.
-     * @param rnum 게시물 ID
+     *
+     * @param rnum            게시물 ID
      * @param rCommunityWrite 게시물 업데이트에 필요한 데이터
      * @return 업데이트 결과를 포함하는 응답
      */
@@ -177,6 +175,7 @@ public class RCommunityController {
 
     /**
      * 특정 게시물을 삭제합니다.
+     *
      * @param rnum 게시물 ID
      * @return 삭제 결과를 포함하는 맵
      */
@@ -201,6 +200,7 @@ public class RCommunityController {
 
     /**
      * 게시물의 채택 상태를 업데이트합니다.
+     *
      * @param rnum 게시물 ID
      * @param body 상태 업데이트 정보 (채택 여부)
      * @return 업데이트 결과를 포함하는 응답

@@ -1,10 +1,8 @@
 package com.himedias.varletserver.service;
 
 import com.himedias.varletserver.dao.ContentsRepository;
-import com.himedias.varletserver.dao.TimetableRepository;
 import com.himedias.varletserver.dto.Paging;
 import com.himedias.varletserver.entity.Contents;
-import com.himedias.varletserver.entity.Timetable;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,7 +10,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -21,7 +18,6 @@ public class ContentsService {
 
     @Autowired
     ContentsRepository cr;
-
 
 
     public Page<Contents> getContentsList(Paging paging) {
@@ -49,7 +45,9 @@ public class ContentsService {
         return cr.getRecentContents();
     }
 
-    public void updateContents(Contents contents) {cr.save(contents); }
+    public void updateContents(Contents contents) {
+        cr.save(contents);
+    }
 
     public void deleteContents(int cseq) {
         cr.deleteByTseq(cseq);

@@ -23,8 +23,9 @@ public class CourseService {
     public List<String> getTnamesByUserid(String userid) {
         return cr.findTnamesByUserid(userid);
     }
+
     public List<Timetable> getMycourseByTseq(String tseq, String userid) {
-        return cr.findMycourseByTseq(tseq,userid);
+        return cr.findMycourseByTseq(tseq, userid);
     }
 
 
@@ -60,7 +61,6 @@ public class CourseService {
         return cr.findDayschedule(tseq);
 
     }
-
 
 
 }

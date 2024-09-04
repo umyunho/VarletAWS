@@ -7,21 +7,15 @@ import com.himedias.varletserver.entity.Member;
 import com.himedias.varletserver.entity.RCommunity;
 import com.himedias.varletserver.entity.Rcrecommend;
 import com.himedias.varletserver.service.RCRecommendService;
-import jakarta.persistence.EntityNotFoundException;
-import jakarta.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.server.ResponseStatusException;
 
-import java.util.*;
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/rcrecommend")
@@ -77,9 +71,6 @@ public class RCRecommendController {
     }
 
 
-
-
-
     /**
      * 특정 게시글에 대한 답글 목록을 조회하는 엔드포인트입니다.
      * 게시글 ID를 받아 해당 게시글에 달린 모든 답글을 반환합니다.
@@ -103,7 +94,6 @@ public class RCRecommendController {
         result.put("paging", paging);
         return result;
     }
-
 
 
     /**

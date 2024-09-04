@@ -4,7 +4,6 @@ import com.himedias.varletserver.dao.MemberRepository;
 import com.himedias.varletserver.dto.MemberDTO;
 import com.himedias.varletserver.entity.Member;
 import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

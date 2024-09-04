@@ -2,7 +2,8 @@ package com.himedias.varletserver.dao;
 
 import com.himedias.varletserver.entity.Review;
 import com.himedias.varletserver.entity.ReviewSummary;
-import org.springframework.data.domain.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

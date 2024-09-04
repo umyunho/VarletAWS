@@ -36,7 +36,7 @@ public class CustomSecurityConfig {
         // 서버가 다른 곳들끼리 통신을 하고 있는 가운데 그들간의 통신을 제약을 두는 설정
         // 서버가 서로 다른 출처 간의 통신을 제어하는 설정입니다.
         http.cors(
-                httpSecurityCorsConfigurer->{
+                httpSecurityCorsConfigurer -> {
                     httpSecurityCorsConfigurer.configurationSource(corsConfigurationSource());
                 }
         );
@@ -51,7 +51,7 @@ public class CustomSecurityConfig {
         // 세션에 상태저장을 하지 않을 환경 설정
         // 세션을 상태 비저장으로 설정합니다.
         http.sessionManagement(
-                sessionConfig->sessionConfig.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                sessionConfig -> sessionConfig.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         );
         // 로그인 처리 설정
         http.formLogin(config -> {
@@ -64,16 +64,18 @@ public class CustomSecurityConfig {
                 UsernamePasswordAuthenticationFilter.class);
 
         // 접근시 발생한 예외 처리(엑세스 토큰 오류, 로그인 오류 등등
-         http.exceptionHandling(config ->{
-           config.accessDeniedHandler(new CustomAccessDeniedHandler());
-         });
+        http.exceptionHandling(config -> {
+            config.accessDeniedHandler(new CustomAccessDeniedHandler());
+        });
 
         return http.build();
     }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
     // : cross-origin HTTP 요청들을 제한합니다
     // 그래서 cross-origin 요청을 하려면 서버의 동의가 필요합니다.
     // 만약 서버가 동의한다면 브라우저에서는 요청을 허락하고, 동의하지 않는다면 브라우저에서 거절합니다.
@@ -88,7 +90,7 @@ public class CustomSecurityConfig {
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // 허용된 HTTP 메서드입니다.
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type")); // 허용된 HTTP 헤더입니다.
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**",configuration); // 모든 경로에 대해 CORS 설정을 등록합니다.
+        source.registerCorsConfiguration("/**", configuration); // 모든 경로에 대해 CORS 설정을 등록합니다.
         return source;
     }
 }

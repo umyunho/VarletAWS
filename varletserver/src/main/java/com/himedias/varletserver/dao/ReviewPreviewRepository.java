@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public interface ReviewPreviewRepository extends JpaRepository<Reviewpreview, Integer> {
     Page<Reviewpreview> findAllBy(Pageable pageable);
+
     @Query("SELECT r FROM Reviewpreview r WHERE LOWER(r.userid) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(r.title) LIKE LOWER(CONCAT('%', :query, '%'))")
     List<Reviewpreview> searchByMultipleFields(String query);
 }

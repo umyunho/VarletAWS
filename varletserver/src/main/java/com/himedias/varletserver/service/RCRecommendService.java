@@ -1,9 +1,9 @@
 package com.himedias.varletserver.service;
 
-import com.himedias.varletserver.dao.RcrecommendRepository;
-import com.himedias.varletserver.dao.RCommunityRepository;
-import com.himedias.varletserver.dao.MemberRepository;
 import com.himedias.varletserver.dao.ImageRepository;
+import com.himedias.varletserver.dao.MemberRepository;
+import com.himedias.varletserver.dao.RCommunityRepository;
+import com.himedias.varletserver.dao.RcrecommendRepository;
 import com.himedias.varletserver.dto.Paging;
 import com.himedias.varletserver.dto.RCRcommend.RcrecommendInfo;
 import com.himedias.varletserver.entity.Image;
@@ -19,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -39,6 +38,7 @@ public class RCRecommendService {
 
     /**
      * 주어진 게시글 ID로 게시글을 조회합니다.
+     *
      * @param rnum 게시글 ID
      * @return RCommunity 객체
      * @throws IllegalArgumentException 게시글 ID가 유효하지 않은 경우
@@ -50,6 +50,7 @@ public class RCRecommendService {
 
     /**
      * 주어진 사용자 ID로 사용자를 조회합니다.
+     *
      * @param userid 사용자 ID
      * @return Member 객체
      * @throws IllegalArgumentException 사용자 ID가 유효하지 않은 경우
@@ -61,8 +62,9 @@ public class RCRecommendService {
 
     /**
      * 새로운 답글을 저장하고 관련된 이미지 파일을 저장합니다.
+     *
      * @param rcrecommend 저장할 답글 객체
-     * @param fileNames 이미지 파일명 목록
+     * @param fileNames   이미지 파일명 목록
      * @return 저장된 Rcrecommend 객체
      */
 // 답글과 관련된 파일을 저장하는 서비스 메소드
@@ -82,13 +84,13 @@ public class RCRecommendService {
 
     /**
      * 주어진 게시글 ID로 답글 목록을 조회합니다.
+     *
      * @param rcnum 게시글 ID
      * @return RcrecommendInfo 리스트
      */
 //    public Page<RcrecommendInfo> getReplies(int rnum, Pageable pageable) {
 //        return rcr.findRepliesByRnum(rnum, pageable);
 //    }
-
     public Page<RcrecommendInfo> getRecommend(int rnum, Paging paging) {
         Pageable pageable = PageRequest.of(paging.getPage() - 1, paging.getDisplayRow(), paging.getSort());
         return rcr.findByRnum(rnum, pageable);
@@ -97,6 +99,7 @@ public class RCRecommendService {
     /**
      * 주어진 답글 ID로 답글을 삭제합니다.
      * 답글과 연관된 이미지들도 먼저 삭제합니다.
+     *
      * @param rcnum 답글 ID
      */
     @Transactional
@@ -113,7 +116,8 @@ public class RCRecommendService {
 
     /**
      * 답글의 채택 상태를 업데이트하고 채택된 답글의 작성자에게 보상을 지급합니다.
-     * @param rcnum 답글 ID
+     *
+     * @param rcnum   답글 ID
      * @param rpicked 답글의 채택 상태 ('Y' 또는 'N')
      * @return 채택 상태 업데이트 결과
      */

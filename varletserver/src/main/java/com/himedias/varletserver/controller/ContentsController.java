@@ -1,11 +1,7 @@
 package com.himedias.varletserver.controller;
 
 import com.himedias.varletserver.dto.Paging;
-import com.himedias.varletserver.dto.Rcommunity.RCommunityWrite;
 import com.himedias.varletserver.entity.Contents;
-import com.himedias.varletserver.entity.Member;
-import com.himedias.varletserver.entity.Qna;
-import com.himedias.varletserver.entity.Timetable;
 import com.himedias.varletserver.service.ContentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -90,10 +86,10 @@ public class ContentsController {
     }
 
     @PostMapping("/deleteContents/{cseq}")
-    public HashMap<String, Object> deleteDayschedule(@PathVariable("cseq") int cseq){
+    public HashMap<String, Object> deleteDayschedule(@PathVariable("cseq") int cseq) {
         HashMap<String, Object> result = new HashMap<String, Object>();
         cs.deleteContents(cseq);
-        result.put("msg","ok");
+        result.put("msg", "ok");
         return result;
     }
 }

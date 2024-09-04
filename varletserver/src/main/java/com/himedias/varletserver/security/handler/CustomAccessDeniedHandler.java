@@ -11,6 +11,7 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
+
 // 인터페이스를 구현하여 접근 거부 상황에서의 처리를 담당하는 클래스입니다.
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
@@ -22,7 +23,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
         Gson gson = new Gson();
 
         // 오류 메시지를 JSON 문자열로 변환합니다.
-        String jsonStr = gson.toJson(Map.of("error","ERROR_ACCESSDENIED"));
+        String jsonStr = gson.toJson(Map.of("error", "ERROR_ACCESSDENIED"));
 
         // 응답의 콘텐츠 타입을 JSON으로 설정합니다.
         response.setContentType("application/json");

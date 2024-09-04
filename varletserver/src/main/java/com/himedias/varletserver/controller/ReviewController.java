@@ -2,12 +2,11 @@ package com.himedias.varletserver.controller;
 
 import com.himedias.varletserver.dto.Paging;
 import com.himedias.varletserver.entity.Review;
-import com.himedias.varletserver.entity.Reviewpreview;
 import com.himedias.varletserver.entity.ReviewSummary;
 import com.himedias.varletserver.entity.Reviewimg;
+import com.himedias.varletserver.entity.Reviewpreview;
 import com.himedias.varletserver.service.ReviewService;
 import com.himedias.varletserver.service.ReviewimgService;
-import jakarta.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
@@ -17,9 +16,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -94,8 +95,6 @@ public class ReviewController {
     }
 
 
-
-
     @PostMapping("/updateReview/{rseq}")
     public ResponseEntity<Map<String, Object>> updateReview(
             @PathVariable int rseq,  // URL 경로에서 리뷰의 고유 번호(rseq)를 받아옵니다.
@@ -156,8 +155,6 @@ public class ReviewController {
     }
 
 
-
-
     @GetMapping("/getReviewView/{rseq}")
     public ResponseEntity<Map<String, Object>> getReviewView(@PathVariable Integer rseq) {
         Map<String, Object> result = new HashMap<>();
@@ -192,7 +189,6 @@ public class ReviewController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
         }
     }
-
 
 
     @DeleteMapping("/reviewDelete/{rseq}")

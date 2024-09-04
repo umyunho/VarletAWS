@@ -4,7 +4,10 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import java.sql.Timestamp;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MemberDTO extends User {
@@ -12,23 +15,23 @@ public class MemberDTO extends User {
     // 생성자 추가 (포인트 필드 포함)
     public MemberDTO(
 
-        String userid,
-        String password,
-        String name,
-        String nickname,
-        String email,
-        String phone,
-        String zip_code,
-        String address,
-        String d_address,
-        Timestamp indate,
-        Character is_login,
-        String provider,
-        String snsid,
-        String profileimg,
-        Integer point,
-        List<String> roleNames
-        ) {
+            String userid,
+            String password,
+            String name,
+            String nickname,
+            String email,
+            String phone,
+            String zip_code,
+            String address,
+            String d_address,
+            Timestamp indate,
+            Character is_login,
+            String provider,
+            String snsid,
+            String profileimg,
+            Integer point,
+            List<String> roleNames
+    ) {
         // 부모 클래스인 User의 생성자를 호출합니다.
         // 이때 사용자의 권한을 SimpleGrantedAuthority 객체로 변환하여 전달합니다.
         super(userid, password,

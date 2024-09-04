@@ -1,10 +1,6 @@
 package com.himedias.varletserver.dto.Rcommunity;
 
-import com.himedias.varletserver.entity.MemberRole;
-
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.List;
 
 /**
  * Projection for {@link com.himedias.varletserver.entity.RCommunity}

@@ -1,9 +1,7 @@
 package com.himedias.varletserver.controller;
 
 import com.himedias.varletserver.dto.Paging;
-import com.himedias.varletserver.entity.Contents;
 import com.himedias.varletserver.entity.House;
-import com.himedias.varletserver.service.ContentsService;
 import com.himedias.varletserver.service.HouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

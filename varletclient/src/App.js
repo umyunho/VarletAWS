@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import Main from './component/Main';
+import Main from "./component/Main";
 import Login from "./component/member/Login";
 import ReviewList from "./component/review/ReviewList";
 import WriteReview from "./component/review/WriteReview";
@@ -11,9 +11,9 @@ import RPostWrite from "./component/request/RPostWrite";
 import RCommunityView from "./component/request/RCommunityView";
 import RCommunityUpdate from "./component/request/RCommunityUpdate";
 import RcRecommend from "./component/request/RcRecommend";
-import Join from './component/member/Join';
-import WriteQna from './component/qna/WriteQna';
-import QnaView from './component/qna/QnaView';
+import Join from "./component/member/Join";
+import WriteQna from "./component/qna/WriteQna";
+import QnaView from "./component/qna/QnaView";
 import Mycourse from "./component/course/Mycourse";
 import Kakaosaveinfo from "./component/member/Kakaosaveinfo";
 import Naversaveinfo from "./component/member/Naversaveinfo";
@@ -33,7 +33,7 @@ import MyPayment from "./component/member/MyPayment";
 
 import PostCode from "./component/popup/PostCode";
 
-import 'ckeditor5/ckeditor5.css';
+import "ckeditor5/ckeditor5.css";
 import ContentsWrite from "./component/contents/ContentsWrite";
 import Pay from "./component/pay/Pay";
 import CheckPwd from "./component/member/CheckPwd";
@@ -48,7 +48,15 @@ import ContentsUpdate from "./component/contents/ContentsUpdate";
 
 function App() {
   return (
-    <div className="App" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <div
+      className="App"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        minHeight: "100vh",
+      }}
+    >
       <Routes>
         <Route path="/" element={<Main />} />
         {/* 회원 관리 */}
@@ -60,11 +68,10 @@ function App() {
         <Route path="/findPwd" element={<FindPwd />} />
         <Route path="/rePwd" element={<RePwd />} />
 
-        
         {/* 고객센터 */}
         <Route path="/qna" element={<Qna />} />
         <Route path="/writeQna" element={<WriteQna />} />
-        <Route path="/qnaView/:qseq" element={<QnaView/>} />
+        <Route path="/qnaView/:qseq" element={<QnaView />} />
 
         {/* 여행 리뷰 */}
         <Route path="/reviewList" element={<ReviewList />} />
@@ -72,17 +79,18 @@ function App() {
         <Route path="/reviewView/:rseq" element={<ReviewView />} />
 
         {/* 여행코스 의뢰 */}
-        <Route path="/rcommunity" element={<RCommunityList />} /> 
-        <Route path="/rpostwrite" element={<RPostWrite />} /> 
-        <Route path="/rCommunityView/:rnum/rcRecommend" element={<RcRecommend />} /> 
+        <Route path="/rcommunity" element={<RCommunityList />} />
+        <Route path="/rpostwrite" element={<RPostWrite />} />
+        <Route
+          path="/rCommunityView/:rnum/rcRecommend"
+          element={<RcRecommend />}
+        />
         <Route path="/rCommunityView/:rnum" element={<RCommunityView />} />
         <Route path="/rCommunityUpdate/:rnum" element={<RCommunityUpdate />} />
-        
-        
-        
+
         <Route path="/mycourse" element={<Mycourse />} />
         <Route path="/house" element={<House />} />
-        
+
         {/* 여행 콘텐츠 */}
         <Route path="/contentsList" element={<ContentsList />} />
         <Route path="/getContentsView/:cseq" element={<ContentsView />} />
@@ -98,7 +106,6 @@ function App() {
         <Route path="/myPayment" element={<MyPayment />} />
         {/* 공지사항 */}
         <Route path="/notice" element={<Notice />} />
-        
 
         {/* 결제 */}
         <Route path="/pay" element={<Pay />} />

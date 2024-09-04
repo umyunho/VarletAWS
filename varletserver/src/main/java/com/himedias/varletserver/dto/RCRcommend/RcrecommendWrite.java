@@ -1,6 +1,5 @@
 package com.himedias.varletserver.dto.RCRcommend;
 
-import com.himedias.varletserver.entity.Image;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -24,20 +23,19 @@ public class RcrecommendWrite implements Serializable {
 
     @NotBlank
     @Size(max = 2000)
-    private String  content;
+    private String content;
 
     @NotNull
     @Size(max = 100)
-    private  String image;
+    private String image;
 
     @NotNull
     @Size(max = 200)
-    private  String saveimages;
+    private String saveimages;
 
     @Getter
     @Setter
     private int rnum;
-
 
 
 }

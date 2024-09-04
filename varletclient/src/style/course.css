@@ -1,259 +1,254 @@
 .course_contents {
-    /* display: none; */
-    /* position: fixed; */
-    z-index: 1;
-    /* bottom: 0; */
-    /* top:400px; */
-    height: 50%;
-    bottom: 100px;
-    width: 100%;
-    border-top: 1px solid #d6d6d6;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    /* overflow: hidden; */
-    overflow-y: auto;
-    /* 세로 스크롤을 활성화합니다. */
-    /* height: */
+  /* display: none; */
+  /* position: fixed; */
+  z-index: 1;
+  /* bottom: 0; */
+  /* top:400px; */
+  height: 50%;
+  bottom: 100px;
+  width: 100%;
+  border-top: 1px solid #d6d6d6;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  /* overflow: hidden; */
+  overflow-y: auto;
+  /* 세로 스크롤을 활성화합니다. */
+  /* height: */
 }
 
 .mycourse_container {
-    display: flex;
-    /* justify-content: space-between;  */
-    position: relative;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    /* height:400px; */
-    /* 예시로 높이를 설정합니다. 필요에 따라 조정하세요. */
-    background-color: white;
-    z-index: 1;
-    padding: 0px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    /* overflow-y: auto; */
-    /* 세로 스크롤을 활성화합니다. */
-    /* overflow-x: auto; */
+  display: flex;
+  /* justify-content: space-between;  */
+  position: relative;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  /* height:400px; */
+  /* 예시로 높이를 설정합니다. 필요에 따라 조정하세요. */
+  background-color: white;
+  z-index: 1;
+  padding: 0px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* overflow-y: auto; */
+  /* 세로 스크롤을 활성화합니다. */
+  /* overflow-x: auto; */
 }
 
 .add_contents {
-    position: fixed;
-    top: 10%;
-    left: 33%;
-    width: 50%;
-    height: 80%;
-    background-color: white;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    /* display:flex; */
-    /* justify-content: center; */
-    /* align-items: flex-start; */
-    border-radius: 15px;
-
+  position: fixed;
+  top: 10%;
+  left: 33%;
+  width: 50%;
+  height: 80%;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* display:flex; */
+  /* justify-content: center; */
+  /* align-items: flex-start; */
+  border-radius: 15px;
 }
 
 .cchead {
-    font-family: 'Mplus 1p Bold';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18.5px;
-    line-height: 40px;
-    color: #000000;
-    cursor: pointer;
-    margin: 0 10px;
-    /* z-index: 5; */
+  font-family: "Mplus 1p Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18.5px;
+  line-height: 40px;
+  color: #000000;
+  cursor: pointer;
+  margin: 0 10px;
+  /* z-index: 5; */
 }
 
 .add_contents .cchead {
-    position: relative;
-    top: 0;
-    right: 0;
-    width: 100%;
-    border: 0px;
-
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+  border: 0px;
 }
 
 .addttamker {
-    font-family: 'Mplus 1p Bold';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18.5px;
-    color: #1e90ff
+  font-family: "Mplus 1p Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18.5px;
+  color: #1e90ff;
 }
 
 .add_contents .contents-item:hover {
-    transform: translateY(0px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0);
+  transform: translateY(0px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0);
 }
 
 .cchead {
-    /* position: fixed; */
-    background-color: white;
-    width: 100%;
-    height: 40px;
-    top: 50%+100px;
+  /* position: fixed; */
+  background-color: white;
+  width: 100%;
+  height: 40px;
+  top: 50%+100px;
 }
 
 .mycourseContentsList {
-    margin: 0 auto;
-    width: 80%;
-    /* 화면 전체 너비 사용 */
-    padding: 20px;
-    background-color: #F0F8FF;
-    /* 밝은 아이보리색 배경 */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 80%;
+  /* 화면 전체 너비 사용 */
+  padding: 20px;
+  background-color: #f0f8ff;
+  /* 밝은 아이보리색 배경 */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
 ul.floating {
-    position: fixed;
-    z-index: 80;
-    bottom: 30px;
-    left: 45%;
+  position: fixed;
+  z-index: 80;
+  bottom: 30px;
+  left: 45%;
 }
 
 ul.floating li.button {
-    float: left;
-    margin: 0 1px;
-    height: 40px;
-    line-height: 40px;
-    cursor: pointer;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: #1e90ff;
-    background-repeat: no-repeat;
+  float: left;
+  margin: 0 1px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #1e90ff;
+  background-repeat: no-repeat;
 }
 
 ul.floating li.button.search {
-    padding: 0 15px 0 45px;
-    border-radius: 20px 0 0 20px;
-    /* background-image: url(/images/container.timetable.search.icon.png); */
-    background-position: 20px center;
-    z-index: 4;
-    display: flex;
-    justify-content: center;
-    width: 220px;
+  padding: 0 15px 0 45px;
+  border-radius: 20px 0 0 20px;
+  /* background-image: url(/images/container.timetable.search.icon.png); */
+  background-position: 20px center;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  width: 220px;
 }
 
 ul.floating li.button.custom {
-    padding: 0 20px 0 30px;
-    border-radius: 0 20px 20px 0;
-    /* background-image: url(/images/container.timetable.custom.icon.png); */
-    background-position: 10px center;
-    z-index: 4;
-    display: flex;
-    /* justify-content: center; */
-    width: 200px;
+  padding: 0 20px 0 30px;
+  border-radius: 0 20px 20px 0;
+  /* background-image: url(/images/container.timetable.custom.icon.png); */
+  background-position: 10px center;
+  z-index: 4;
+  display: flex;
+  /* justify-content: center; */
+  width: 200px;
 }
 
 .coursemenubtn {
-    color: #fff;
-    background-color: #1e90ff;
-    border-radius: 5px 5px 5px 5px;
+  color: #fff;
+  background-color: #1e90ff;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .course {
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgb(248, 248, 248);
-    /* border-radius: 10px; */
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    font-family: 'Mplus 1p Bold';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18.5px;
-    line-height: 22px;
-    color: #000000;
-    cursor: pointer;
-    margin: 0 10px;
-    border: 1px solid #d6d6d6;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(248, 248, 248);
+  /* border-radius: 10px; */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  font-family: "Mplus 1p Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18.5px;
+  line-height: 22px;
+  color: #000000;
+  cursor: pointer;
+  margin: 0 10px;
+  border: 1px solid #d6d6d6;
 }
 
 .mycourse_container {
-    display: flex;
-    justify-content: column;
+  display: flex;
+  justify-content: column;
 }
 
 @media screen and (max-width: 768px) {
-    .mycourse_container {
-        flex-direction: row;
-        /* 화면이 작아지면 세로 배치 */
-    }
+  .mycourse_container {
+    flex-direction: row;
+    /* 화면이 작아지면 세로 배치 */
+  }
 }
 
 .coursemenu {
-    /* position: fixed; */
-    width: 20%;
-    /* top: 100px; */
-
+  /* position: fixed; */
+  width: 20%;
+  /* top: 100px; */
 }
 
 .timetable {
-    display: table;
-    /* display: flex; */
-    flex-direction: column;
-    /* background-color: rgb(175, 175, 175); */
-    border-collapse: collapse;
-    width: 80%;
+  display: table;
+  /* display: flex; */
+  flex-direction: column;
+  /* background-color: rgb(175, 175, 175); */
+  border-collapse: collapse;
+  width: 80%;
 }
 
 .tempTable {
-    /* display :table; */
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    /* flex-direction: column; */
-    /* background-color: rgb(175, 175, 175); */
-    border-collapse: collapse;
-    width: 80%;
-    height: 1400px;
-    font-family: 'Mplus 1p Bold';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18.5px;
+  /* display :table; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* flex-direction: column; */
+  /* background-color: rgb(175, 175, 175); */
+  border-collapse: collapse;
+  width: 80%;
+  height: 1400px;
+  font-family: "Mplus 1p Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18.5px;
 }
 
 .courserow {
-    display: flex;
-    /* border:1px solid black; */
-    border-collapse: collapse;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
+  display: flex;
+  /* border:1px solid black; */
+  border-collapse: collapse;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
 }
 
 /* .courserow:first-child {
     position:fixed;
 } */
 
-
 .coursecell {
-    border-collapse: collapse;
-    margin: 0px;
-    padding: 0px;
-    border: 1px solid #d6d6d6;
-    width: 50px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #777777;
+  border-collapse: collapse;
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid #d6d6d6;
+  width: 50px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777777;
 }
 
 .datacell {
-    position: absolute;
-    border-collapse: collapse;
-    margin: 0px;
-    padding: 0px;
-    border: 1px solid #d6d6d6;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    border: none;
-    font-family: 'Mplus 1p Bold';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18.5px;
+  position: absolute;
+  border-collapse: collapse;
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid #d6d6d6;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: none;
+  font-family: "Mplus 1p Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18.5px;
 }

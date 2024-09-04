@@ -26,7 +26,7 @@ export const location2Data = {
     { value: 22, label: "은평구" },
     { value: 23, label: "종로구" },
     { value: 24, label: "중구" },
-    { value: 25, label: "중랑구" }
+    { value: 25, label: "중랑구" },
   ],
   3: [
     { value: 0, label: "전체" },
@@ -45,7 +45,7 @@ export const location2Data = {
     { value: 13, label: "연제구" },
     { value: 14, label: "수영구" },
     { value: 15, label: "사상구" },
-    { value: 16, label: "기장군" }
+    { value: 16, label: "기장군" },
   ],
   4: [
     { value: 0, label: "전체" },
@@ -57,7 +57,7 @@ export const location2Data = {
     { value: 6, label: "수성구" },
     { value: 7, label: "달서구" },
     { value: 8, label: "달성군" },
-    { value: 9, label: "군위군" }
+    { value: 9, label: "군위군" },
   ],
   5: [
     { value: 0, label: "전체" },
@@ -70,7 +70,7 @@ export const location2Data = {
     { value: 7, label: "계양구" },
     { value: 8, label: "서구" },
     { value: 9, label: "강화군" },
-    { value: 10, label: "옹진군" }
+    { value: 10, label: "옹진군" },
   ],
   6: [
     { value: 0, label: "전체" },
@@ -78,7 +78,7 @@ export const location2Data = {
     { value: 2, label: "서구" },
     { value: 3, label: "남구" },
     { value: 4, label: "북구" },
-    { value: 5, label: "광산구" }
+    { value: 5, label: "광산구" },
   ],
   7: [
     { value: 0, label: "전체" },
@@ -86,7 +86,7 @@ export const location2Data = {
     { value: 2, label: "중구" },
     { value: 3, label: "서구" },
     { value: 4, label: "유성구" },
-    { value: 5, label: "대덕구" }
+    { value: 5, label: "대덕구" },
   ],
   8: [
     { value: 0, label: "전체" },
@@ -94,7 +94,7 @@ export const location2Data = {
     { value: 2, label: "남구" },
     { value: 3, label: "동구" },
     { value: 4, label: "북구" },
-    { value: 5, label: "울주군" }
+    { value: 5, label: "울주군" },
   ],
   9: [
     { value: 0, label: "전체" },
@@ -121,7 +121,7 @@ export const location2Data = {
     { value: 21, label: "반곡동" },
     { value: 22, label: "보람동" },
     { value: 23, label: "대평동" },
-    { value: 24, label: "다정동" }
+    { value: 24, label: "다정동" },
   ],
   10: [
     { value: 0, label: "전체" },
@@ -155,7 +155,7 @@ export const location2Data = {
     { value: 28, label: "여주시" },
     { value: 29, label: "연천군" },
     { value: 30, label: "가평군" },
-    { value: 31, label: "양평군" }
+    { value: 31, label: "양평군" },
   ],
   11: [
     { value: 0, label: "전체" },
@@ -175,7 +175,7 @@ export const location2Data = {
     { value: 14, label: "양구" },
     { value: 15, label: "인제" },
     { value: 16, label: "고성" },
-    { value: 17, label: "양양" }
+    { value: 17, label: "양양" },
   ],
   12: [
     { value: 0, label: "전체" },
@@ -189,7 +189,7 @@ export const location2Data = {
     { value: 8, label: "진천" },
     { value: 9, label: "괴산" },
     { value: 10, label: "음성" },
-    { value: 11, label: "단양" }
+    { value: 11, label: "단양" },
   ],
   13: [
     { value: 0, label: "전체" },
@@ -207,7 +207,7 @@ export const location2Data = {
     { value: 12, label: "청양" },
     { value: 13, label: "홍성" },
     { value: 14, label: "예산" },
-    { value: 15, label: "태안" }
+    { value: 15, label: "태안" },
   ],
   14: [
     { value: 0, label: "전체" },
@@ -224,7 +224,7 @@ export const location2Data = {
     { value: 11, label: "임실" },
     { value: 12, label: "순창" },
     { value: 13, label: "진안" },
-    { value: 14, label: "장수" }
+    { value: 14, label: "장수" },
   ],
   15: [
     { value: 0, label: "전체" },
@@ -249,7 +249,7 @@ export const location2Data = {
     { value: 19, label: "장성" },
     { value: 20, label: "완도" },
     { value: 21, label: "진도" },
-    { value: 22, label: "신안" }
+    { value: 22, label: "신안" },
   ],
   16: [
     { value: 0, label: "전체" },
@@ -274,7 +274,7 @@ export const location2Data = {
     { value: 19, label: "예천" },
     { value: 20, label: "봉화" },
     { value: 21, label: "울진" },
-    { value: 22, label: "울릉" }
+    { value: 22, label: "울릉" },
   ],
   17: [
     { value: 0, label: "전체" },
@@ -295,34 +295,32 @@ export const location2Data = {
     { value: 15, label: "남해" },
     { value: 16, label: "함양" },
     { value: 17, label: "신창" },
-    { value: 18, label: "의령" }
+    { value: 18, label: "의령" },
   ],
   18: [
     { value: 0, label: "전체" },
     { value: 1, label: "제주도" },
-    { value: 2, label: "서귀포시" }
-  ]
+    { value: 2, label: "서귀포시" },
+  ],
 };
 
-  
-  
-  export const location1Data = {
-    1: ["전체"],
-    2: ["서울특별시"],
-    3: ["부산광역시"],
-    4: ["대구광역시"],
-    5: ["인천광역시"],
-    6: ["광주광역시"],
-    7: ["대전광역시"],
-    8: ["울산광역시"],
-    9: ["세종특별자치시"],
-    10: ["경기도"],
-    11: ["강원도"],
-    12: ["충청북도"],
-    13: ["충청남도"],
-    14: ["전라북도"],
-    15: ["전라남도"],
-    16: ["경상북도"],
-    17: ["경상남도"],
-    18: ["제주도"]
-  };
+export const location1Data = {
+  1: ["전체"],
+  2: ["서울특별시"],
+  3: ["부산광역시"],
+  4: ["대구광역시"],
+  5: ["인천광역시"],
+  6: ["광주광역시"],
+  7: ["대전광역시"],
+  8: ["울산광역시"],
+  9: ["세종특별자치시"],
+  10: ["경기도"],
+  11: ["강원도"],
+  12: ["충청북도"],
+  13: ["충청남도"],
+  14: ["전라북도"],
+  15: ["전라남도"],
+  16: ["경상북도"],
+  17: ["경상남도"],
+  18: ["제주도"],
+};

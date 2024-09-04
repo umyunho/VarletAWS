@@ -57,7 +57,6 @@ public class KakaoProfile {
             }
 
 
-
             public String getProfile_image_url() {
                 return profile_image_url;
             }

@@ -2,7 +2,6 @@ package com.himedias.varletserver.service;
 
 import com.himedias.varletserver.dao.HouseRepository;
 import com.himedias.varletserver.dto.Paging;
-import com.himedias.varletserver.entity.Contents;
 import com.himedias.varletserver.entity.House;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

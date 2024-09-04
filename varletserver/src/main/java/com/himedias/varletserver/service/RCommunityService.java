@@ -4,7 +4,10 @@ import com.himedias.varletserver.dao.MemberRepository;
 import com.himedias.varletserver.dao.RCommunityRepository;
 import com.himedias.varletserver.dao.RcrecommendRepository;
 import com.himedias.varletserver.dto.Paging;
-import com.himedias.varletserver.dto.Rcommunity.*;
+import com.himedias.varletserver.dto.Rcommunity.RCommunityInfo;
+import com.himedias.varletserver.dto.Rcommunity.RCommunityMyList;
+import com.himedias.varletserver.dto.Rcommunity.RCommunitySummary;
+import com.himedias.varletserver.dto.Rcommunity.RCommunityWrite;
 import com.himedias.varletserver.entity.Member;
 import com.himedias.varletserver.entity.RCommunity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +35,10 @@ public class RCommunityService {
     private MemberRepository mr;
 
 
-
     /**
      * 총 게시물 수를 계산합니다.
-     * @param location 위치 정보 (선택적)
+     *
+     * @param location  위치 정보 (선택적)
      * @param location2 두 번째 위치 정보 (선택적)
      * @return 게시물 총 수
      */
@@ -77,6 +80,7 @@ public class RCommunityService {
 
     /**
      * 새 게시물을 작성합니다.
+     *
      * @param rCommunityWrite 게시물 작성 정보
      * @return 게시물 작성 결과와 정보
      */
@@ -132,6 +136,7 @@ public class RCommunityService {
 
     /**
      * 게시물 상세 정보를 조회합니다.
+     *
      * @param rnum 게시물 ID
      * @return 게시물 상세 정보
      */
@@ -156,7 +161,8 @@ public class RCommunityService {
 
     /**
      * 게시물을 업데이트합니다.
-     * @param rnum 게시물 ID
+     *
+     * @param rnum            게시물 ID
      * @param rCommunityWrite 업데이트할 게시물 정보
      * @return 게시물 업데이트 결과와 정보
      */
@@ -215,6 +221,7 @@ public class RCommunityService {
 
     /**
      * 게시물을 삭제합니다. 'picked' 필드의 상태에 따라 포인트를 반환할지 결정합니다.
+     *
      * @param rnum 게시물 ID
      * @return 게시물 삭제 결과와 포인트 반환 정보
      */
@@ -259,7 +266,8 @@ public class RCommunityService {
 
     /**
      * 게시물의 채택 상태를 업데이트합니다.
-     * @param rnum 게시물 ID
+     *
+     * @param rnum   게시물 ID
      * @param picked 채택 상태 ('Y' 또는 'N')
      * @return 업데이트 성공 여부
      */
@@ -272,8 +280,10 @@ public class RCommunityService {
         // 업데이트된 행의 수가 0보다 큰 경우 true를 반환하여 성공을 알림
         return updatedRows > 0;
     }
+
     /**
      * 사용자 ID로 Member 객체를 조회합니다.
+     *
      * @param userid 사용자 ID
      * @return Member 객체 (옵션)
      */
@@ -298,7 +308,6 @@ public class RCommunityService {
             return Page.empty();
         }
     }
-
 
 
 }

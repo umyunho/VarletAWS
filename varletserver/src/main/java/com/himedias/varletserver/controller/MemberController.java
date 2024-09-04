@@ -1,13 +1,10 @@
-
 package com.himedias.varletserver.controller;
 
 import com.google.gson.Gson;
 import com.himedias.varletserver.dto.KakaoProfile;
 import com.himedias.varletserver.dto.NaverProfile;
 import com.himedias.varletserver.dto.OAuthToken;
-import com.himedias.varletserver.dto.Paging;
 import com.himedias.varletserver.entity.Member;
-import com.himedias.varletserver.entity.Review;
 import com.himedias.varletserver.security.CustomSecurityConfig;
 import com.himedias.varletserver.security.util.CustomJWTException;
 import com.himedias.varletserver.security.util.JWTUtil;
@@ -16,13 +13,8 @@ import com.himedias.varletserver.service.S3UploadService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -34,7 +26,9 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/member")
@@ -256,7 +250,7 @@ public class MemberController {
     // 비밀번호 확인
     @PostMapping("/pwdCheck")
     public HashMap<String, Object> pwdCheck(@RequestParam("password") String password, @RequestParam("userid") String userid) {
-        System.out.println(password+"/"+userid);
+        System.out.println(password + "/" + userid);
         HashMap<String, Object> result = new HashMap<>();
         Member mem = ms.getMemberByUserid(userid);
         PasswordEncoder pe = cc.passwordEncoder(); // 암호화 방식 일관되게 설정
@@ -269,7 +263,6 @@ public class MemberController {
 
         return result;
     }
-
 
 
     // 닉네임 중복
@@ -298,12 +291,12 @@ public class MemberController {
     S3UploadService sus;
 
     @PostMapping("/fileupload")
-    public HashMap<String, Object> fileup( @RequestParam("image") MultipartFile file){
+    public HashMap<String, Object> fileup(@RequestParam("image") MultipartFile file) {
 
         HashMap<String, Object> result = new HashMap<String, Object>();
         try {
             // 서비스단의 화일 업로드 메서드를 호출해서 파일을 저장
-            String uploadFilePathName = sus.saveFile( file );
+            String uploadFilePathName = sus.saveFile(file);
             result.put("filename", uploadFilePathName);
         } catch (IllegalStateException | IOException e) {
             e.printStackTrace();
@@ -405,7 +398,7 @@ public class MemberController {
 
     // 인증 코드 검증 및 비밀번호 반환 API
     @GetMapping("/verifyCodeAndFindPwd/{email}/{code}")
-    public HashMap<String, Object> verifyCodeAndFindPwd(@PathVariable("email") String email,@PathVariable("code") String code) {
+    public HashMap<String, Object> verifyCodeAndFindPwd(@PathVariable("email") String email, @PathVariable("code") String code) {
         HashMap<String, Object> result = new HashMap<>();
         String ok = ms.verifyCodeAndFindPwd(email, code);
 
@@ -419,12 +412,12 @@ public class MemberController {
 
     // 인증 코드 검증 및 아이디 반환 API
     @GetMapping("/verifyCodeAndFindId/{email}/{code}")
-    public HashMap<String, Object> verifyCodeAndFindId(@PathVariable("email") String email,@PathVariable("code") String code) {
+    public HashMap<String, Object> verifyCodeAndFindId(@PathVariable("email") String email, @PathVariable("code") String code) {
         HashMap<String, Object> result = new HashMap<>();
         String userid = ms.verifyCodeAndFindId(email, code);
 
         if (userid != null) {
-            result.put("userid",userid);
+            result.put("userid", userid);
             result.put("msg", "yes");
         } else {
             result.put("msg", "no");
@@ -454,7 +447,6 @@ public class MemberController {
         result.put("profileImgUrl", profileImgUrl);
         return result;
     }
-
 
 
     // 이메일 중복처리

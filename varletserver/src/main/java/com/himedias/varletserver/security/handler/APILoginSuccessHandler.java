@@ -1,7 +1,6 @@
 package com.himedias.varletserver.security.handler;
 
 import com.google.gson.Gson;
-
 import com.himedias.varletserver.dto.MemberDTO;
 import com.himedias.varletserver.security.util.JWTUtil;
 import jakarta.servlet.ServletException;
@@ -27,16 +26,16 @@ public class APILoginSuccessHandler implements AuthenticationSuccessHandler {
         MemberDTO memberDTO = (MemberDTO) authentication.getPrincipal();
 
         // authenrication 에는 로그인에 성공한 사용자정보 DTO가 담겨있고, getPrincipal 로 추출
-        Map<String,Object> claims = memberDTO.getClaims(); // 사용자 정보가 담긴 Map을 추출합니다.
+        Map<String, Object> claims = memberDTO.getClaims(); // 사용자 정보가 담긴 Map을 추출합니다.
 
 
         // 엑세스 토큰 + 리프레시 토큰 생성
-        String accessToken = JWTUtil.generateToken(claims,1); // 엑세스 토큰: 1분 유효
-        String refreshToken = JWTUtil.generateToken(claims, 60*3); // 리프레시 토큰: 24시간 유효
+        String accessToken = JWTUtil.generateToken(claims, 1); // 엑세스 토큰: 1분 유효
+        String refreshToken = JWTUtil.generateToken(claims, 60 * 3); // 리프레시 토큰: 24시간 유효
 
         // 생성된 토큰을 claims에 추가합니다.
-        claims.put("access_token",accessToken);
-        claims.put("refresh_token",refreshToken);
+        claims.put("access_token", accessToken);
+        claims.put("refresh_token", refreshToken);
 
         // Gson 객체를 사용하여 claims를 JSON 문자열로 변환합니다.
         Gson gson = new Gson();

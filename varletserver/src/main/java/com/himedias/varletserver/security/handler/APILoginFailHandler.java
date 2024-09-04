@@ -22,7 +22,7 @@ public class APILoginFailHandler implements AuthenticationFailureHandler {
         Gson gson = new Gson();
 
         // 오류 메시지를 JSON 문자열로 변환합니다.
-        String jsonStr = gson.toJson(Map.of("error","ERROR_LOGIN"));
+        String jsonStr = gson.toJson(Map.of("error", "ERROR_LOGIN"));
 
         // 응답의 콘텐츠 타입을 JSON으로 설정합니다.
         response.setContentType("application/json");

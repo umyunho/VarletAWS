@@ -4,9 +4,9 @@ import com.himedias.varletserver.dao.ReviewPreviewRepository;
 import com.himedias.varletserver.dao.ReviewRepository;
 import com.himedias.varletserver.dto.Paging;
 import com.himedias.varletserver.entity.Review;
-import com.himedias.varletserver.entity.Reviewpreview;
 import com.himedias.varletserver.entity.ReviewSummary;
 import com.himedias.varletserver.entity.Reviewimg;
+import com.himedias.varletserver.entity.Reviewpreview;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,7 +18,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @Transactional
@@ -122,12 +124,13 @@ public class ReviewService {
         return rr.searchByMultipleFields(query);
     }
 
-    public List<Reviewpreview> reviewPreviewSearch(String query) {  return rpr.searchByMultipleFields(query);  }
+    public List<Reviewpreview> reviewPreviewSearch(String query) {
+        return rpr.searchByMultipleFields(query);
+    }
 
     public List<ReviewSummary> getReviewsByUser(String userid) {
         return rr.findByUserid(userid); // 작성자 ID로 모든 리뷰를 가져옴
     }
-
 
 
 }

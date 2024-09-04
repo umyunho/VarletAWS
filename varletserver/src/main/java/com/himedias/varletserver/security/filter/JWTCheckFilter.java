@@ -1,11 +1,10 @@
 package com.himedias.varletserver.security.filter;
 
 import com.google.gson.Gson;
-
 import com.himedias.varletserver.dto.MemberDTO;
-import com.himedias.varletserver.security.util.CustomJWTException;
 import com.himedias.varletserver.security.util.JWTUtil;
-import jakarta.servlet.*;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.log4j.Log4j2;
@@ -16,7 +15,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Timestamp;
-import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 
@@ -52,10 +50,11 @@ public class JWTCheckFilter extends OncePerRequestFilter {
             String snsid = (String) claims.get("snsid");
             String profileimg = (String) claims.get("profileimg");
             Integer point = (Integer) claims.get("point");
-            List<String> roleNames = (List<String>) claims.get("roleNames");;
+            List<String> roleNames = (List<String>) claims.get("roleNames");
+            ;
 
             // 추출한 정보를 사용하여 MemberDTO 객체를 생성합니다.
-            MemberDTO memberDTO = new MemberDTO(userid, pwd, name,nickname, email, phone, zip_code, address, d_address,indate, is_login, provider, snsid,profileimg, point,roleNames);
+            MemberDTO memberDTO = new MemberDTO(userid, pwd, name, nickname, email, phone, zip_code, address, d_address, indate, is_login, provider, snsid, profileimg, point, roleNames);
 
             log.info("-----------------------------------");
             log.info(memberDTO);
@@ -156,9 +155,6 @@ public class JWTCheckFilter extends OncePerRequestFilter {
             return true;
 
 
-
-
-
         // 이미지 관련
         if (path.startsWith("/images/"))
             return true;
@@ -166,9 +162,6 @@ public class JWTCheckFilter extends OncePerRequestFilter {
             return true;
         if (path.startsWith("/favicon.ico"))
             return true;
-
-
-
 
 
         // 고객센터
@@ -188,8 +181,6 @@ public class JWTCheckFilter extends OncePerRequestFilter {
             return true;
         if (path.startsWith("/house/search"))
             return true;
-
-
 
 
         //course
@@ -266,8 +257,6 @@ public class JWTCheckFilter extends OncePerRequestFilter {
             return true;
 
 
-
-
         //contents
         if (path.startsWith("/contents/contentsList/"))
             return true;
@@ -296,7 +285,6 @@ public class JWTCheckFilter extends OncePerRequestFilter {
             return true;
         if (path.startsWith("/timetable/getAllMyCourse/"))
             return true;
-
 
 
         //dayschedule

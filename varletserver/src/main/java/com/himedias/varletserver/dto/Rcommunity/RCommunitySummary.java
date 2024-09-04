@@ -1,6 +1,5 @@
 package com.himedias.varletserver.dto.Rcommunity;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 /**
