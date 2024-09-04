@@ -48,12 +48,12 @@ function MyPayment() {
               </div>
                   <div className="noticeTable">
                       <div className="payment_row">
-                          <div className="payment_col" style={{flex:"2.8"}}>주문번호</div>
-                          <div className="payment_col" style={{flex:"3"}}>이름</div>
-                          <div className="payment_col" style={{flex:"3"}}>이메일</div>
+                          <div className="payment_col" style={{flex:"3"}}>주문번호</div>
+                          <div className="payment_col" style={{flex:"2"}}>이름</div>
+                          <div className="payment_col" style={{flex:"2"}}>이메일</div>
                           <div className="payment_col" style={{flex:"2"}}>금액</div>
-                          <div className="payment_col" style={{flex:"3"}}>상태</div>
-                          <div className="payment_col" style={{flex:"3"}}>날짜</div>
+                          <div className="payment_col" style={{flex:"2"}}>상태</div>
+                          <div className="payment_col" style={{flex:"5"}}>날짜</div>
                       </div>
                   </div>
                {
@@ -73,7 +73,7 @@ function MyPayment() {
                               </div>
                             )
                       })
-                  ):(null)
+                  ):("결제내역이 없습니다.")
                }
                 <button className="w-40 py-3 mt-4 text-white bg-gradient-to-r from-[#1e90ff] to-[#1e90ff] rounded-lg" type="button" onClick={() => { navigate('/') }}>
                     홈으로
