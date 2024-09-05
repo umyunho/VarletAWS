@@ -249,7 +249,7 @@ function SelectedCustomCourse({ selectedContents, mycourse }) {
               id="price"
               placeholder="Enter a price"
               type="number"
-              value={price}
+              value={contents.cost}
               onChange={(e) => setPrice(e.target.value)}
             />
           </div>

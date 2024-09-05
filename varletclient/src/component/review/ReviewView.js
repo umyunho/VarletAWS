@@ -270,7 +270,7 @@ function ReviewView() {
                             <td className="p-4 align-middle">번호</td>
                             <td className="p-4 align-middle">{review?.rseq}</td>
                           </tr>
-                          <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                          <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted text-nowrap">
                             <td className="p-4 align-middle">작성자</td>
                             <td className="p-4 align-middle">
                               {review?.userid || "Unknown"}

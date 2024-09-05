@@ -168,6 +168,32 @@ function Heading() {
             </a>
             <div className="w-full px-2">
               <div className="flex flex-col items-center w-full mt-3 border-t border-gray-300">
+              <a
+                  onClick={() => navigate("/checkPwd")}
+                  className="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300"
+                  href="#"
+                >
+                  {/* <svg
+                    className="w-6 h-6 stroke-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z"
+                      stroke-width="0"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z"
+                      stroke-width="0"
+                      fill="currentColor"
+                    />
+                  </svg> */}
+                  <span className="ml-2 text-sm font-medium">보유 포인트 : {getCookie('user').point}</span>
+                </a>
                 <a
                   onClick={() => navigate("/checkPwd")}
                   className="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300"
