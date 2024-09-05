@@ -188,7 +188,6 @@ function RPostWritePost() {
                         value={location2}
                         onChange={handleLocation2Change}
                       >
-                        <option value="">전체</option>
                         {location2Data[location]?.map((loc) => (
                           <option key={loc.value} value={loc.value}>
                             {loc.label}
