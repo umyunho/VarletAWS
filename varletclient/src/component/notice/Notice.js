@@ -88,7 +88,7 @@ function Notice() {
             ? noticeList.map((notice, idx) => {
                 return (
                   <div className="notice_row2" key={idx}>
-                    <div className="notice_coll" style={{ flex: "2" }}>
+                    <div className="notice_coll" style={{ flex: "2.6" }}>
                       {notice.nseq}
                     </div>
                     <div

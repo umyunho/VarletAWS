@@ -120,7 +120,7 @@ function ReviewList() {
           </button>
         </div>
   
-        <div className="search-container my-5 flex items-center">
+        <div className="search-container flex items-center" style={{ marginBottom: "1cm" }}>
           <input
             type="text"
             value={searchTerm}

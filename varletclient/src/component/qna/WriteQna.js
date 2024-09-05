@@ -41,7 +41,7 @@ function WriteQna() {
   return (
     <>
       <Heading />
-      <div className="subPage" style={{ paddingTop: "100px" }}>
+      <div className="subPage" style={{ paddingTop: "100px",flex:'1' }}>
         <div className="qnawriteform" style={{ flex: "4" }}>
           <h2>1:1 문의하기</h2>
           <div className="field">

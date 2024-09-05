@@ -1,31 +1,59 @@
-.PaymentPage {
+.PaymentPage{
   width: 1200px;
   align-items: center;
+  height: 748px;
 }
-.payment {
-  font-size: 40px;
-  font-weight: 900;
+.payment{
+ font-size: 40px; 
+ font-weight: 900;
+ align-items: center;
+ 
+ width: 1200px;
 }
-.payment_row {
+.payment_row{
   width: 1200px;
   border-bottom: 1px solid black;
   align-items: center;
-  display: flex;
-  justify-content: space-between;
+  display:flex;
+  justify-content:space-between;
   font-weight: 900;
 }
-.payment_col {
+.payment_col{
   margin-left: 80px;
 }
 
-.notice_row2 {
+.notice_row2{
   padding: 10px 0 10px 0;
   width: 1200px;
   border-bottom: 1px solid rgb(196, 196, 196);
   align-items: center;
-  display: flex;
-  justify-content: space-between;
+  display:flex;
+  justify-content:space-between;
 }
-.payment_coll {
+.payment_coll{
   margin-left: 80px;
+}
+
+
+.mypayment_btn {
+  background-color: #007bff; /* 버튼 배경색 */
+  color: #fff; /* 버튼 텍스트 색상 */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* 부드러운 배경색 전환 효과 */
+  text-align: center;
+  align-items: center;
+  display: flex;
+  margin-left: 550px;
+}
+
+.mypayment_btns{
+  border-top: 1px solid rgb(158, 158, 158);
+  width: 1200px;
+  padding: 10px 0px 10px 0px;
+  text-align: center;
+  align-items: center;
 }

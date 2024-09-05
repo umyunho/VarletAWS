@@ -101,9 +101,6 @@ function Heading() {
         <div className="mycourse" onClick={() => logCheck("/mycourse")}>
           여행 코스 만들기
         </div>
-        <div className="house" onClick={() => navigate("/house")}>
-          숙소
-        </div>
         {!userCookie && (
           <div className="login-buttons">
             {!userCookie && (
