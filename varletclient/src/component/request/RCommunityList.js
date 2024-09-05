@@ -22,7 +22,7 @@ function PostList() {
 
   useEffect(() => {
     fetchPosts();
-  }, [page, size]); // page와 size 상태 변경 시마다 fetchPosts 호출
+  }, [page, size, location, location2]); // page와 size 상태 변경 시마다 fetchPosts 호출
 
   const fetchPosts = () => {
     const params = { page, size };
@@ -64,9 +64,8 @@ function PostList() {
     setIsLocation2Visible(false);
     setSearching(false);
     setPage(1); // 검색 취소 시 첫 페이지로 설정
-    fetchPosts();
+    // location과 location2가 ""로 업데이트된 후 useEffect에 의해 fetchPosts가 호출됩니다.
   };
-
   const maskeduser = (user) => {
     // user는 객체로 되어 있어야 함
     if (user && typeof user.userid === "string") {
