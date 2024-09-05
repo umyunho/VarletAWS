@@ -156,7 +156,6 @@ function ContentsList() {
               type="text"
               value={searchTerm}
               onChange={handleSearchChange}
-              placeholder="축제명으로 검색"
             />
             {searchTerm && (
               <svg
