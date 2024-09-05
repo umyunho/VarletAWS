@@ -26,8 +26,9 @@ function PostList() {
 
   const fetchPosts = () => {
     const params = { page, size };
-    if (location) params.location = location;
-    if (location2) params.location2 = location2;
+    if (location) params.location = parseInt(location, 10); // 정수 변환
+    if (location2) params.location2 = parseInt(location2, 10); // 정수 변환
+    console.log("fetchPosts 호출됨:", params);
 
     axios
       .get("/api/rcommunity/getPostList", { params })
@@ -35,8 +36,8 @@ function PostList() {
         setPosts(response.data.postlist);
         setTotalCount(response.data.paging.totalCount); // 전체 게시물 수 설정
         setTotalPages(Math.ceil(response.data.paging.totalCount / size)); // 전체 페이지 수 계산
-        console.log("tkdlwm?", page);
-        console.log("tkdlwm?", totalPages);
+        console.log("현재 페이지:", page);
+        console.log("전체 페이지 수:", totalPages);
         console.log("데이터? ", response.data.postlist);
         console.log("유저정보?", setCookie.userid);
       })
