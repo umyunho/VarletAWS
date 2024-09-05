@@ -320,10 +320,10 @@ function Main() {
                 />
                 <div className="p-6 space-y-2">
                   <p className="text-sm">
-                    ■거제도■ [노팁/노옵션/요 트/특식UP] 제주도 낭만여행 ...
+                    ■거제도■ 거제도 낭만여행 ...
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    #안전여행상품 #럭셔리요트 #감귤따...
+                    #낚시여행 #럭셔리요트 #...
                   </p>
                   <p className="text-lg font-bold">거제도 리뷰 보러가기</p>
                 </div>
@@ -333,7 +333,7 @@ function Main() {
                 data-v0-t="card"
               >
                 <img
-                  src="/api/images/gujedo.jpg"
+                  src="/api/images/busan1.jpg"
                   alt="Field"
                   className="w-full h-[200px] object-cover rounded-t-md"
                   width="300"
@@ -342,12 +342,12 @@ function Main() {
                 />
                 <div className="p-6 space-y-2">
                   <p className="text-sm">
-                    ■거제도■ [노팁/노옵션/요 트/특식UP] 제주도 낭만여행 ...
+                    갑자기 떠나고 싶어서 다녀온 부산여행
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    #안전여행상품 #럭셔리요트 #감귤따...
+                    #암소갈비 #해운대 #너무덥다...
                   </p>
-                  <p className="text-lg font-bold">거제도 리뷰 보러가기</p>
+                  <p className="text-lg font-bold">부산여행 리뷰 보러가기</p>
                 </div>
               </div>
               <div
@@ -355,7 +355,7 @@ function Main() {
                 data-v0-t="card"
               >
                 <img
-                  src="/api/images/gujedo.jpg"
+                  src="/api/images/yeosu.jpg"
                   alt="Field"
                   className="w-full h-[200px] object-cover rounded-t-md"
                   width="300"
@@ -364,12 +364,12 @@ function Main() {
                 />
                 <div className="p-6 space-y-2">
                   <p className="text-sm">
-                    ■거제도■ [노팁/노옵션/요 트/특식UP] 제주도 낭만여행 ...
+                    여수 밤바다 듣다가 떠난 여수여행...
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    #안전여행상품 #럭셔리요트 #감귤따...
+                    #여수밤바다 #맛집 짱 많음 #회 맛있다
                   </p>
-                  <p className="text-lg font-bold">거제도 리뷰 보러가기</p>
+                  <p className="text-lg font-bold">여수 리뷰 보러가기</p>
                 </div>
               </div>
               <div
@@ -377,7 +377,7 @@ function Main() {
                 data-v0-t="card"
               >
                 <img
-                  src="/api/images/gujedo.jpg"
+                  src="/api/images/junju.jpg"
                   alt="Field"
                   className="w-full h-[200px] object-cover rounded-t-md"
                   width="300"
@@ -386,12 +386,12 @@ function Main() {
                 />
                 <div className="p-6 space-y-2">
                   <p className="text-sm">
-                    ■거제도■ [노팁/노옵션/요 트/특식UP] 제주도 낭만여행 ...
+                    전주 먹거리 여행 떠나기...
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    #안전여행상품 #럭셔리요트 #감귤따...
+                    #전주하면 비빔밥 #콩나물국밥 #한옥마을...
                   </p>
-                  <p className="text-lg font-bold">거제도 리뷰 보러가기</p>
+                  <p className="text-lg font-bold">전주 리뷰 보러가기</p>
                 </div>
               </div>
             </div>
@@ -414,108 +414,6 @@ function Main() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center w-full p-8 space-y-8">
-        <h1 className="text-2xl font-bold">국내 숙소</h1>
-        <div className="flex space-x-4 items-center">
-          <button className="flex items-center justify-center w-8 h-8 bg-white rounded-full shadow">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-4 h-4 text-muted-foreground"
-            >
-              <path d="m15 18-6-6 6-6"></path>
-            </svg>
-          </button>
-          <div className="grid grid-cols-3 gap-4">
-            <div
-              className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105"
-              data-v0-t="card"
-            >
-              <img
-                src="/api/images/ulleungdo.jpg"
-                alt="Forest"
-                className="w-full h-[200px] object-cover rounded-t-md"
-                width="300"
-                height="200"
-                style={{ aspectRatio: "300 / 200", objectFit: "cover" }}
-              />
-              <div className="p-6 space-y-2 ">
-                <p className="text-sm">부산 숙소</p>
-                <p className="text-xs text-muted-foreground">
-                  #울릉도 #여름바다 #전망대 #...
-                </p>
-                <p className="text-lg font-bold">부산숙소 보러가기</p>
-              </div>
-            </div>
-            <div
-              className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105"
-              data-v0-t="card"
-            >
-              <img
-                src="/api/images/jeju2.jpg"
-                alt="Beach"
-                className="w-full h-[200px] object-cover rounded-t-md"
-                width="300"
-                height="200"
-                style={{ aspectRatio: "300 / 200", objectFit: "cover" }}
-              />
-              <div className="p-6 space-y-2">
-                <p className="text-sm">♫여름에는 제주도!...</p>
-                <p className="text-xs text-muted-foreground">
-                  #제주도 #우도 #돌하르방
-                </p>
-                <p className="text-lg font-bold">제주도 리뷰 보러가기</p>
-              </div>
-            </div>
-            <div
-              className="rounded-lg border bg-card text-card-foreground shadow-sm w-[300px] hover:scale-105"
-              data-v0-t="card"
-            >
-              <img
-                src="/api/images/gujedo.jpg"
-                alt="Field"
-                className="w-full h-[200px] object-cover rounded-t-md"
-                width="300"
-                height="200"
-                style={{ aspectRatio: "300 / 200", objectFit: "cover" }}
-              />
-              <div className="p-6 space-y-2">
-                <p className="text-sm">
-                  ■거제도■ [노팁/노옵션/요 트/특식UP] 제주도 낭만여행 ...
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  #안전여행상품 #럭셔리요트 #감귤따...
-                </p>
-                <p className="text-lg font-bold">거제도 리뷰 보러가기</p>
-              </div>
-            </div>
-          </div>
-          <button className="flex items-center justify-center w-8 h-8 bg-white rounded-full shadow">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-4 h-4 text-muted-foreground"
-            >
-              <path d="M9 6l6 6l-6 6" />
-            </svg>
-          </button>
-        </div>
-      </div>
-
       <div className="flex flex-col items-center w-full">
         <div className="w-full bg-[#1e90ff] py-8 text-center text-white">
           <h1 className="text-2xl font-bold">MODETOUR PLAY LIST</h1>
